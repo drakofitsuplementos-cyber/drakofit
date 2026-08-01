@@ -1,0 +1,693 @@
+{
+ "body-advance-whey-protein-2lb": {
+  "prom": 5.0,
+  "cnt": 57,
+  "dist": [
+   56,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Matías",
+    "s": 5,
+    "d": "30/07/2026",
+    "t": "Muy conforme con la compra, llegó rapidísimo y el producto es excelente."
+   },
+   {
+    "n": "Camila",
+    "s": 5,
+    "d": "20/06/2026",
+    "t": "Muy buena calidad, la relación precio-calidad me pareció excelente."
+   },
+   {
+    "n": "Florencia",
+    "s": 5,
+    "d": "18/06/2026",
+    "t": "Se nota que es un producto de muy buena calidad."
+   },
+   {
+    "n": "Mariano",
+    "s": 5,
+    "d": "17/06/2026",
+    "t": "Todo impecable, llegó antes de lo esperado. Un lujo."
+   },
+   {
+    "n": "Leandro",
+    "s": 5,
+    "d": "15/06/2026",
+    "t": "Excelente atención de parte de Drako."
+   },
+   {
+    "n": "Romina",
+    "s": 5,
+    "d": "13/06/2026",
+    "t": "En pocas semanas noté una mejora en el rendimiento. Muy contenta con los resultados."
+   },
+   {
+    "n": "Patricia",
+    "s": 5,
+    "d": "10/06/2026",
+    "t": "Soy profe y varias alumnas empezaron a usarla también. Estamos muy conformes con los cambios."
+   },
+   {
+    "n": "Facundo",
+    "s": 5,
+    "d": "08/06/2026",
+    "t": "Muy buena opción por el precio que tiene."
+   },
+   {
+    "n": "Kevin",
+    "s": 5,
+    "d": "07/06/2026",
+    "t": "Todo llegó perfecto y en tiempo. Súper recomendable."
+   },
+   {
+    "n": "Martín",
+    "s": 5,
+    "d": "06/06/2026",
+    "t": "Llegó todo impecable y en excelentes condiciones. Muy recomendable."
+   },
+   {
+    "n": "Sofía",
+    "s": 5,
+    "d": "05/06/2026",
+    "t": "Desde que la empecé a tomar siento mucha menos fatiga después de entrenar."
+   },
+   {
+    "n": "Carolina",
+    "s": 5,
+    "d": "02/06/2026",
+    "t": "Hasta ahora es la que mejor resultado me dio."
+   },
+   {
+    "n": "Ricardo",
+    "s": 5,
+    "d": "31/05/2026",
+    "t": "Como sugerencia, mejoraría un poco el embalaje, aunque llegó todo perfecto."
+   },
+   {
+    "n": "Belén",
+    "s": 5,
+    "d": "27/05/2026",
+    "t": "La vengo usando hace bastante y aproveché la oferta para volver a comprar."
+   },
+   {
+    "n": "Alan",
+    "s": 5,
+    "d": "19/05/2026",
+    "t": "Ya terminé de recibir todo, impecable el servicio. Muchas gracias."
+   },
+   {
+    "n": "Sebastián",
+    "s": 5,
+    "d": "18/05/2026",
+    "t": "Como siempre, excelente atención y muy buen producto. No tengo ninguna queja."
+   },
+   {
+    "n": "Rocío",
+    "s": 5,
+    "d": "16/05/2026",
+    "t": "Se mezcla muy bien, probé varias marcas y por ahora me quedo con esta."
+   },
+   {
+    "n": "Natalia",
+    "s": 5,
+    "d": "10/05/2026",
+    "t": "Esta vez la noté todavía más fina y fácil de disolver. Me gusta mucho."
+   },
+   {
+    "n": "Nicolás",
+    "s": 5,
+    "d": "07/05/2026",
+    "t": "Era la primera vez que consumía creatina y la verdad superó mis expectativas. Hay que ser constante."
+   },
+   {
+    "n": "Mónica",
+    "s": 5,
+    "d": "03/05/2026",
+    "t": "Recién empiezo a usarla, todavía no puedo evaluar resultados, pero hasta ahora todo perfecto."
+   }
+  ]
+ },
+ "star-nutrition-creatina-monohidratada-300g-doypack": {
+  "prom": 4.9,
+  "cnt": 56,
+  "dist": [
+   52,
+   4,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Alexis",
+    "s": 5,
+    "d": "24/04/2026",
+    "t": "Producto de primera. Como sugerencia, estaría bueno sumar una guía rápida con la forma de uso para quienes recién arrancan. Ya se lo recomendé a varios amigos."
+   },
+   {
+    "n": "Pablo",
+    "s": 4,
+    "d": "15/04/2026",
+    "t": "Para mí está entre las mejores marcas que probé. Muy conforme."
+   },
+   {
+    "n": "Melina",
+    "s": 5,
+    "d": "13/04/2026",
+    "t": "Retiré el pedido por el depósito de Drako y salió todo perfecto. Muy buena atención."
+   },
+   {
+    "n": "Nicolás",
+    "s": 5,
+    "d": "08/04/2026",
+    "t": "La atención fue excelente desde el primer momento. Todo de diez."
+   },
+   {
+    "n": "Martín",
+    "s": 5,
+    "d": "02/04/2026",
+    "t": "Muchas gracias, seguro vuelvo a comprar."
+   },
+   {
+    "n": "Paola",
+    "s": 5,
+    "d": "25/03/2026",
+    "t": "Se disuelve rápido y es muy fácil de tomar."
+   },
+   {
+    "n": "Santiago",
+    "s": 5,
+    "d": "23/03/2026",
+    "t": "Ya recibí el pedido. Muy buenos precios, aproveché para comprar antes de quedarme sin stock."
+   },
+   {
+    "n": "Diego",
+    "s": 5,
+    "d": "21/03/2026",
+    "t": "La vengo tomando hace más de un mes y todo impecable."
+   },
+   {
+    "n": "Juliana",
+    "s": 5,
+    "d": "18/03/2026",
+    "t": "Hace bastante que consumo esta marca y siempre me dio muy buenos resultados."
+   },
+   {
+    "n": "Ricardo",
+    "s": 5,
+    "d": "08/03/2026",
+    "t": "Compré por la web y salió todo excelente. La atención de Drako fue impecable y respondieron todas mis consultas."
+   },
+   {
+    "n": "Florencia",
+    "s": 5,
+    "d": "02/03/2026",
+    "t": "El pedido llegó rapidísimo y en perfectas condiciones."
+   },
+   {
+    "n": "Agustín",
+    "s": 5,
+    "d": "28/02/2026",
+    "t": "La verdad noté cambios en la fuerza, la resistencia y la recuperación. Muy recomendable."
+   },
+   {
+    "n": "Maia",
+    "s": 5,
+    "d": "26/02/2026",
+    "t": "Excelente calidad. También destaco la atención porque respondieron enseguida."
+   },
+   {
+    "n": "Jazmín",
+    "s": 5,
+    "d": "24/02/2026",
+    "t": "Muy buena experiencia comprando en Drako."
+   },
+   {
+    "n": "Nicolás",
+    "s": 5,
+    "d": "22/02/2026",
+    "t": "Buena calidad y además se disuelve muy fácil."
+   },
+   {
+    "n": "Jeremías",
+    "s": 5,
+    "d": "18/02/2026",
+    "t": "Quería hacer una consulta y me respondieron enseguida. Excelente atención."
+   },
+   {
+    "n": "Carolina",
+    "s": 5,
+    "d": "16/02/2026",
+    "t": "Después de investigar bastante me decidí por esta creatina. Muy conforme con la calidad."
+   },
+   {
+    "n": "José Luis",
+    "s": 5,
+    "d": "12/02/2026",
+    "t": "Recién la estoy empezando a usar, pero por ahora todo viene excelente. El envío fue muy rápido."
+   },
+   {
+    "n": "Ramiro",
+    "s": 5,
+    "d": "08/02/2026",
+    "t": "Muy buena creatina, me cayó perfecto y es muy fácil de tomar."
+   },
+   {
+    "n": "Daiana",
+    "s": 5,
+    "d": "03/02/2026",
+    "t": "Muy buenos productos. Se nota la calidad."
+   },
+   {
+    "n": "Alan",
+    "s": 5,
+    "d": "31/01/2026",
+    "t": "Excelente producto. Lo recomiendo totalmente."
+   },
+   {
+    "n": "Eliana",
+    "s": 4,
+    "d": "29/01/2026",
+    "t": "Ya conocía el producto y sigue manteniendo la misma calidad."
+   },
+   {
+    "n": "Ramiro F.",
+    "s": 5,
+    "d": "27/01/2026",
+    "t": "Es la segunda vez que compro en Drako y otra vez salió todo impecable. Muy buenos precios."
+   },
+   {
+    "n": "Ailén",
+    "s": 5,
+    "d": "18/01/2026",
+    "t": "Los recomiendo por la rapidez con la que despachan y los precios que manejan."
+   },
+   {
+    "n": "Gonzalo",
+    "s": 4,
+    "d": "13/01/2026",
+    "t": "Muy buen producto, práctico y se disuelve sin problemas."
+   },
+   {
+    "n": "Francisco",
+    "s": 5,
+    "d": "08/01/2026",
+    "t": "Llegó en perfecto estado. No tengo nada para reclamar, totalmente recomendable."
+   },
+   {
+    "n": "Marcelo",
+    "s": 5,
+    "d": "05/01/2026",
+    "t": "Muy recomendable. El producto llegó impecable y la atención fue rapidísima."
+   }
+  ]
+ },
+ "star-nutrition-creatina-1kg": {
+  "prom": 4.9,
+  "cnt": 56,
+  "dist": [
+   52,
+   4,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Alexis",
+    "s": 5,
+    "d": "24/04/2026",
+    "t": "Producto de primera. Como sugerencia, estaría bueno sumar una guía rápida con la forma de uso para quienes recién arrancan. Ya se lo recomendé a varios amigos."
+   },
+   {
+    "n": "Pablo",
+    "s": 4,
+    "d": "15/04/2026",
+    "t": "Para mí está entre las mejores marcas que probé. Muy conforme."
+   },
+   {
+    "n": "Melina",
+    "s": 5,
+    "d": "13/04/2026",
+    "t": "Retiré el pedido por el depósito de Drako y salió todo perfecto. Muy buena atención."
+   },
+   {
+    "n": "Nicolás",
+    "s": 5,
+    "d": "08/04/2026",
+    "t": "La atención fue excelente desde el primer momento. Todo de diez."
+   },
+   {
+    "n": "Martín",
+    "s": 5,
+    "d": "02/04/2026",
+    "t": "Muchas gracias, seguro vuelvo a comprar."
+   },
+   {
+    "n": "Paola",
+    "s": 5,
+    "d": "25/03/2026",
+    "t": "Se disuelve rápido y es muy fácil de tomar."
+   },
+   {
+    "n": "Santiago",
+    "s": 5,
+    "d": "23/03/2026",
+    "t": "Ya recibí el pedido. Muy buenos precios, aproveché para comprar antes de quedarme sin stock."
+   },
+   {
+    "n": "Diego",
+    "s": 5,
+    "d": "21/03/2026",
+    "t": "La vengo tomando hace más de un mes y todo impecable."
+   },
+   {
+    "n": "Juliana",
+    "s": 5,
+    "d": "18/03/2026",
+    "t": "Hace bastante que consumo esta marca y siempre me dio muy buenos resultados."
+   },
+   {
+    "n": "Ricardo",
+    "s": 5,
+    "d": "08/03/2026",
+    "t": "Compré por la web y salió todo excelente. La atención de Drako fue impecable y respondieron todas mis consultas."
+   },
+   {
+    "n": "Florencia",
+    "s": 5,
+    "d": "02/03/2026",
+    "t": "El pedido llegó rapidísimo y en perfectas condiciones."
+   },
+   {
+    "n": "Agustín",
+    "s": 5,
+    "d": "28/02/2026",
+    "t": "La verdad noté cambios en la fuerza, la resistencia y la recuperación. Muy recomendable."
+   },
+   {
+    "n": "Maia",
+    "s": 5,
+    "d": "26/02/2026",
+    "t": "Excelente calidad. También destaco la atención porque respondieron enseguida."
+   },
+   {
+    "n": "Jazmín",
+    "s": 5,
+    "d": "24/02/2026",
+    "t": "Muy buena experiencia comprando en Drako."
+   },
+   {
+    "n": "Nicolás",
+    "s": 5,
+    "d": "22/02/2026",
+    "t": "Buena calidad y además se disuelve muy fácil."
+   },
+   {
+    "n": "Jeremías",
+    "s": 5,
+    "d": "18/02/2026",
+    "t": "Quería hacer una consulta y me respondieron enseguida. Excelente atención."
+   },
+   {
+    "n": "Carolina",
+    "s": 5,
+    "d": "16/02/2026",
+    "t": "Después de investigar bastante me decidí por esta creatina. Muy conforme con la calidad."
+   },
+   {
+    "n": "José Luis",
+    "s": 5,
+    "d": "12/02/2026",
+    "t": "Recién la estoy empezando a usar, pero por ahora todo viene excelente. El envío fue muy rápido."
+   },
+   {
+    "n": "Ramiro",
+    "s": 5,
+    "d": "08/02/2026",
+    "t": "Muy buena creatina, me cayó perfecto y es muy fácil de tomar."
+   },
+   {
+    "n": "Daiana",
+    "s": 5,
+    "d": "03/02/2026",
+    "t": "Muy buenos productos. Se nota la calidad."
+   },
+   {
+    "n": "Alan",
+    "s": 5,
+    "d": "31/01/2026",
+    "t": "Excelente producto. Lo recomiendo totalmente."
+   },
+   {
+    "n": "Eliana",
+    "s": 4,
+    "d": "29/01/2026",
+    "t": "Ya conocía el producto y sigue manteniendo la misma calidad."
+   },
+   {
+    "n": "Ramiro F.",
+    "s": 5,
+    "d": "27/01/2026",
+    "t": "Es la segunda vez que compro en Drako y otra vez salió todo impecable. Muy buenos precios."
+   },
+   {
+    "n": "Ailén",
+    "s": 5,
+    "d": "18/01/2026",
+    "t": "Los recomiendo por la rapidez con la que despachan y los precios que manejan."
+   },
+   {
+    "n": "Gonzalo",
+    "s": 4,
+    "d": "13/01/2026",
+    "t": "Muy buen producto, práctico y se disuelve sin problemas."
+   },
+   {
+    "n": "Francisco",
+    "s": 5,
+    "d": "08/01/2026",
+    "t": "Llegó en perfecto estado. No tengo nada para reclamar, totalmente recomendable."
+   },
+   {
+    "n": "Marcelo",
+    "s": 5,
+    "d": "05/01/2026",
+    "t": "Muy recomendable. El producto llegó impecable y la atención fue rapidísima."
+   }
+  ]
+ },
+ "star-nutrition-colageno-hidrolizado-limon-210g-1vcqh": {
+  "prom": 4.9,
+  "cnt": 15,
+  "dist": [
+   14,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Cristian",
+    "s": 5,
+    "d": "03/01/2026",
+    "t": "Se nota que se preocupan por brindar una muy buena atención incluso después de la compra. Muy conforme."
+   },
+   {
+    "n": "Santiago",
+    "s": 5,
+    "d": "30/12/2025",
+    "t": "Muy buena, ya la empecé a tomar y por ahora viene excelente."
+   },
+   {
+    "n": "Francisco",
+    "s": 5,
+    "d": "20/12/2025",
+    "t": "Muy buen producto, se nota la calidad."
+   },
+   {
+    "n": "Genaro",
+    "s": 4,
+    "d": "17/12/2025",
+    "t": "Llegó dentro del tiempo acordado. La bolsa vino con un pequeño detalle, pero el producto estaba perfecto y no tuve inconvenientes."
+   },
+   {
+    "n": "Martina",
+    "s": 5,
+    "d": "13/12/2025",
+    "t": "Llevo poco tiempo usándolo y ya noto una diferencia en los entrenamientos. Lo volvería a comprar."
+   },
+   {
+    "n": "Ignacio",
+    "s": 5,
+    "d": "08/12/2025",
+    "t": "La página funciona muy bien, encontré muy buenos precios y el envío fue rapidísimo."
+   },
+   {
+    "n": "Yanina",
+    "s": 5,
+    "d": "04/12/2025",
+    "t": "Muy buen producto, cumplió con mis expectativas."
+   },
+   {
+    "n": "Yesica",
+    "s": 5,
+    "d": "02/12/2025",
+    "t": "Muy conforme con la calidad."
+   },
+   {
+    "n": "Cecilia",
+    "s": 5,
+    "d": "28/11/2025",
+    "t": "Excelente atención y muy buen producto. Los recomiendo."
+   }
+  ]
+ },
+ "one-fit-creatina-200g-vsn6v": {
+  "prom": 5.0,
+  "cnt": 13,
+  "dist": [
+   13,
+   0,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Facundo",
+    "s": 5,
+    "d": "05/06/2026",
+    "t": "Excelente producto, muy conforme con la compra."
+   },
+   {
+    "n": "Nataniel",
+    "s": 5,
+    "d": "31/05/2026",
+    "t": "Muy buena experiencia, tanto con el producto como con la atención. Los recomiendo."
+   },
+   {
+    "n": "Melina",
+    "s": 5,
+    "d": "29/05/2026",
+    "t": "Excelente atención, respondieron siempre rápido y con buena predisposición."
+   },
+   {
+    "n": "Thiago",
+    "s": 5,
+    "d": "12/05/2026",
+    "t": "Muy buen producto y excelente atención. Súper recomendable."
+   }
+  ]
+ },
+ "star-nutrition-just-plant-2lb-f5qjc": {
+  "prom": 5.0,
+  "cnt": 14,
+  "dist": [
+   14,
+   0,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Leonardo",
+    "s": 5,
+    "d": "24/11/2025",
+    "t": "Muy recomendable, producto confiable y de muy buena calidad."
+   },
+   {
+    "n": "Lola",
+    "s": 5,
+    "d": "22/11/2025",
+    "t": "Muy buena atención y el envío llegó antes de lo esperado."
+   },
+   {
+    "n": "Lorena",
+    "s": 5,
+    "d": "18/11/2025",
+    "t": "Es la primera vez que voy a incorporar creatina a mi rutina. Llegó todo en excelentes condiciones."
+   },
+   {
+    "n": "Andrea",
+    "s": 5,
+    "d": "16/11/2025",
+    "t": "Excelente atención y productos de calidad. Los recomiendo sin dudar."
+   },
+   {
+    "n": "Agustina",
+    "s": 5,
+    "d": "10/11/2025",
+    "t": "Muy buena compra, excelente precio y el pedido llegó enseguida."
+   },
+   {
+    "n": "Yasmín",
+    "s": 5,
+    "d": "08/11/2025",
+    "t": "Muy buen producto, precio competitivo y una atención impecable."
+   },
+   {
+    "n": "Camila",
+    "s": 5,
+    "d": "02/11/2025",
+    "t": "Muy buena calidad, todo llegó bien sellado y despacharon el pedido muy rápido."
+   }
+  ]
+ },
+ "gold-100-whey-protein-2lbs-1or33": {
+  "prom": 4.9,
+  "cnt": 14,
+  "dist": [
+   13,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Juan",
+    "s": 5,
+    "d": "29/07/2026",
+    "t": "Muy buen producto, todo lo que probé de Drako hasta ahora salió excelente."
+   },
+   {
+    "n": "Franco",
+    "s": 5,
+    "d": "22/07/2026",
+    "t": "Muy buena experiencia, llegó todo perfecto y el producto está tremendo. Recomendado."
+   },
+   {
+    "n": "Matías",
+    "s": 5,
+    "d": "06/07/2026",
+    "t": "El pedido llegó impecable y en poco tiempo. Muy conforme con la compra."
+   },
+   {
+    "n": "Valentín",
+    "s": 5,
+    "d": "24/06/2026",
+    "t": "Fue mi primera vez consumiendo creatina y la verdad me gustó mucho. Muy buena atención y calidad."
+   },
+   {
+    "n": "Jeremías",
+    "s": 5,
+    "d": "16/06/2026",
+    "t": "Excelente producto, lo recomiendo totalmente."
+   },
+   {
+    "n": "Teo",
+    "s": 5,
+    "d": "12/06/2026",
+    "t": "Muy buen producto, quedé conforme desde el primer uso."
+   }
+  ]
+ }
+}
