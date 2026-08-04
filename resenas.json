@@ -689,5 +689,1217 @@
     "t": "Muy buen producto, quedé conforme desde el primer uso."
    }
   ]
+ },
+ "bsn-creatina-309g-1h485": {
+  "prom": 4.9,
+  "cnt": 15,
+  "dist": [
+   14,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Matías",
+    "s": 5,
+    "d": "02/08/2026",
+    "t": "Muy buena atención de Julián. El pedido salió el mismo día y llegó antes de lo esperado."
+   },
+   {
+    "n": "Kevin",
+    "s": 5,
+    "d": "26/07/2026",
+    "t": "Todo impecable, respondieron todas mis dudas antes de comprar."
+   },
+   {
+    "n": "Franco",
+    "s": 5,
+    "d": "18/07/2026",
+    "t": "Excelente servicio. Muy recomendable."
+   },
+   {
+    "n": "Rodrigo",
+    "s": 5,
+    "d": "08/07/2026",
+    "t": "Muy buenos precios y el despacho fue rapidísimo."
+   },
+   {
+    "n": "Agustina",
+    "s": 4,
+    "d": "02/07/2026",
+    "t": "Todo bien. Como sugerencia, agregaría más stock de algunos productos."
+   },
+   {
+    "n": "Diego",
+    "s": 5,
+    "d": "19/06/2026",
+    "t": "Llegó en perfectas condiciones. Muy conforme con la compra."
+   },
+   {
+    "n": "Martín",
+    "s": 5,
+    "d": "26/05/2026",
+    "t": "Excelente atención de Joaquín. Muy predispuesto."
+   },
+   {
+    "n": "Valentina",
+    "s": 5,
+    "d": "14/04/2026",
+    "t": "Todo salió perfecto desde la compra hasta la entrega."
+   }
+  ]
+ },
+ "star-nutrition-omega-3-fish-oil-60-caps": {
+  "prom": 4.9,
+  "cnt": 14,
+  "dist": [
+   13,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Carolina",
+    "s": 5,
+    "d": "01/08/2026",
+    "t": "Muy buena experiencia comprando. El envío fue rapidísimo."
+   },
+   {
+    "n": "Julieta",
+    "s": 5,
+    "d": "24/07/2026",
+    "t": "Excelente atención. Me respondieron enseguida."
+   },
+   {
+    "n": "Mariana",
+    "s": 5,
+    "d": "14/07/2026",
+    "t": "Compré por recomendación y la verdad salió todo excelente."
+   },
+   {
+    "n": "Ricardo",
+    "s": 4,
+    "d": "21/06/2026",
+    "t": "Muy conforme. El pedido llegó un día después de lo previsto, pero todo perfecto."
+   },
+   {
+    "n": "Tomás",
+    "s": 5,
+    "d": "02/06/2026",
+    "t": "Muy buena atención de Julián. Da gusto comprar así."
+   },
+   {
+    "n": "Alexis",
+    "s": 5,
+    "d": "29/04/2026",
+    "t": "Todo excelente, seguramente vuelva a comprar."
+   }
+  ]
+ },
+ "star-nutrition-magnesio-500grs": {
+  "prom": 4.9,
+  "cnt": 13,
+  "dist": [
+   12,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Melina",
+    "s": 5,
+    "d": "27/07/2026",
+    "t": "Excelente atención y muy rápido el despacho."
+   },
+   {
+    "n": "Daiana",
+    "s": 5,
+    "d": "18/07/2026",
+    "t": "Llegó todo impecable y bien embalado."
+   },
+   {
+    "n": "Jonathan",
+    "s": 5,
+    "d": "03/07/2026",
+    "t": "Muy recomendable. Siempre contestan rápido."
+   },
+   {
+    "n": "Pablo",
+    "s": 4,
+    "d": "08/06/2026",
+    "t": "Muy conforme con la compra."
+   },
+   {
+    "n": "Leandro",
+    "s": 5,
+    "d": "13/05/2026",
+    "t": "Excelente atención de Joaquín. Muy amable."
+   },
+   {
+    "n": "Andrea",
+    "s": 5,
+    "d": "10/04/2026",
+    "t": "Muy buenos precios y despacho muy rápido."
+   }
+  ]
+ },
+ "star-nutrition-collagen-sport-naranja-360g-bgrxs": {
+  "prom": 4.9,
+  "cnt": 13,
+  "dist": [
+   12,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Verónica",
+    "s": 5,
+    "d": "30/07/2026",
+    "t": "Todo perfecto. Muy conforme."
+   },
+   {
+    "n": "Rocío",
+    "s": 5,
+    "d": "20/07/2026",
+    "t": "Excelente atención desde el primer momento."
+   },
+   {
+    "n": "Paula",
+    "s": 5,
+    "d": "10/07/2026",
+    "t": "El pedido llegó rapidísimo."
+   },
+   {
+    "n": "Mariano",
+    "s": 4,
+    "d": "14/06/2026",
+    "t": "Todo bien. Volvería a comprar."
+   },
+   {
+    "n": "Candela",
+    "s": 5,
+    "d": "03/06/2026",
+    "t": "Muy buena atención de Julián."
+   },
+   {
+    "n": "Lorena",
+    "s": 5,
+    "d": "28/04/2026",
+    "t": "Muy buena experiencia comprando por la web."
+   }
+  ]
+ },
+ "star-nutrition-collagen-plus-limon-360g-kaoiw": {
+  "prom": 4.9,
+  "cnt": 13,
+  "dist": [
+   12,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Enzo",
+    "s": 5,
+    "d": "28/07/2026",
+    "t": "Excelente atención y muy rápido el envío."
+   },
+   {
+    "n": "Adrián",
+    "s": 5,
+    "d": "18/07/2026",
+    "t": "Muy conforme con el servicio."
+   },
+   {
+    "n": "Martín",
+    "s": 5,
+    "d": "06/07/2026",
+    "t": "Todo impecable, muy recomendable."
+   },
+   {
+    "n": "Ramiro",
+    "s": 5,
+    "d": "15/06/2026",
+    "t": "Excelente atención de Joaquín. Respondió todas mis consultas."
+   },
+   {
+    "n": "Maia",
+    "s": 4,
+    "d": "03/06/2026",
+    "t": "Muy buena compra. Todo llegó bien."
+   },
+   {
+    "n": "Aldana",
+    "s": 5,
+    "d": "27/04/2026",
+    "t": "Muy buenos precios y excelente atención."
+   }
+  ]
+ },
+ "star-nutrition-creatina-monohidratada-300g-pote": {
+  "prom": 4.9,
+  "cnt": 15,
+  "dist": [
+   14,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Emiliano",
+    "s": 5,
+    "d": "03/08/2026",
+    "t": "Compré un pote para probar y la verdad muy buena experiencia. Julián respondió todas mis dudas."
+   },
+   {
+    "n": "Franco",
+    "s": 5,
+    "d": "29/07/2026",
+    "t": "La creatina llegó perfectamente sellada y el despacho fue rapidísimo."
+   },
+   {
+    "n": "Lucía",
+    "s": 5,
+    "d": "23/07/2026",
+    "t": "Muy buena atención. Me avisaron apenas despacharon el pedido."
+   },
+   {
+    "n": "Matías",
+    "s": 5,
+    "d": "15/07/2026",
+    "t": "Compré dos potes porque tenían muy buen precio. Todo impecable."
+   },
+   {
+    "n": "Daiana",
+    "s": 4,
+    "d": "10/07/2026",
+    "t": "Muy conforme. Sólo tardó un poco más de lo esperado por el correo."
+   },
+   {
+    "n": "Valentina",
+    "s": 5,
+    "d": "29/06/2026",
+    "t": "Primera compra con ellos y seguramente vuelva."
+   },
+   {
+    "n": "Alan",
+    "s": 5,
+    "d": "09/06/2026",
+    "t": "Joaquín me respondió por WhatsApp en un rato y pude hacer la compra sin problemas."
+   },
+   {
+    "n": "Diego",
+    "s": 5,
+    "d": "03/05/2026",
+    "t": "Excelente atención y muy buenos precios."
+   }
+  ]
+ },
+ "gold-magnesium-glycinate-60-caps-1ndnh": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Gabriel",
+    "s": 5,
+    "d": "30/07/2026",
+    "t": "Lo encontré acá cuando en otros lados no había stock. Muy buena atención."
+   },
+   {
+    "n": "Ignacio",
+    "s": 5,
+    "d": "23/07/2026",
+    "t": "El pedido salió el mismo día. Excelente servicio."
+   },
+   {
+    "n": "Martín",
+    "s": 5,
+    "d": "15/07/2026",
+    "t": "Muy recomendable. Todo llegó bien protegido."
+   },
+   {
+    "n": "Fernanda",
+    "s": 4,
+    "d": "09/07/2026",
+    "t": "Todo perfecto. Sólo agregaría más medios de pago."
+   },
+   {
+    "n": "Victoria",
+    "s": 5,
+    "d": "23/06/2026",
+    "t": "Muy buena atención de Julián."
+   },
+   {
+    "n": "Nadia",
+    "s": 5,
+    "d": "21/05/2026",
+    "t": "Excelente compra. Muy rápido el envío."
+   }
+  ]
+ },
+ "gold-collagen-hidrolized-ahq10vit-c-60cap-mvbrj": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Mariana",
+    "s": 5,
+    "d": "01/08/2026",
+    "t": "Muy conforme con la compra. Llegó antes de lo esperado."
+   },
+   {
+    "n": "Belén",
+    "s": 5,
+    "d": "24/07/2026",
+    "t": "Excelente atención desde el primer momento."
+   },
+   {
+    "n": "Rocío",
+    "s": 5,
+    "d": "15/07/2026",
+    "t": "Compré este colágeno por recomendación y salió todo excelente."
+   },
+   {
+    "n": "Carla",
+    "s": 5,
+    "d": "01/07/2026",
+    "t": "Muy buena predisposición para responder consultas."
+   },
+   {
+    "n": "Patricia",
+    "s": 5,
+    "d": "08/06/2026",
+    "t": "Todo llegó impecable y bien embalado."
+   },
+   {
+    "n": "Romina",
+    "s": 5,
+    "d": "15/03/2026",
+    "t": "Muy buena experiencia comprando por la web."
+   }
+  ]
+ },
+ "gold-creatine-creapure-200gr-sgw15": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Agustín",
+    "s": 5,
+    "d": "03/08/2026",
+    "t": "Buscaba específicamente la Creapure y la conseguí enseguida. Muy buena atención."
+   },
+   {
+    "n": "Nicolás",
+    "s": 5,
+    "d": "26/07/2026",
+    "t": "Todo impecable. El pote llegó perfecto."
+   },
+   {
+    "n": "Lucas",
+    "s": 5,
+    "d": "17/07/2026",
+    "t": "Excelente servicio y despacho muy rápido."
+   },
+   {
+    "n": "Franco",
+    "s": 5,
+    "d": "05/07/2026",
+    "t": "Julián me ayudó con una consulta antes de comprar."
+   },
+   {
+    "n": "Alexis",
+    "s": 4,
+    "d": "26/06/2026",
+    "t": "Muy conforme con la compra."
+   },
+   {
+    "n": "Mariano",
+    "s": 5,
+    "d": "28/05/2026",
+    "t": "Todo excelente. Seguro vuelva a comprar."
+   }
+  ]
+ },
+ "gold-muscle-mass-gainer-5lbs-oi47r": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Valentín",
+    "s": 5,
+    "d": "27/07/2026",
+    "t": "La bolsa llegó impecable y muy bien protegida."
+   },
+   {
+    "n": "Enzo",
+    "s": 5,
+    "d": "19/07/2026",
+    "t": "Excelente atención de Joaquín. Me ayudó a elegir."
+   },
+   {
+    "n": "Juan Cruz",
+    "s": 5,
+    "d": "10/07/2026",
+    "t": "Muy buenos precios y despacho rapidísimo."
+   },
+   {
+    "n": "Thiago",
+    "s": 4,
+    "d": "04/07/2026",
+    "t": "Todo perfecto. Llegó un día después de lo previsto."
+   },
+   {
+    "n": "Martín",
+    "s": 5,
+    "d": "12/06/2026",
+    "t": "Compré junto con una proteína y llegó todo excelente."
+   },
+   {
+    "n": "Mariano",
+    "s": 5,
+    "d": "25/03/2026",
+    "t": "Muy buena compra. Volvería sin dudar."
+   }
+  ]
+ },
+ "gold-100-whey-protein-5lbs-1fcf6": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Sofía",
+    "s": 5,
+    "d": "02/08/2026",
+    "t": "Muy buena proteína. Llegó rapidísimo y perfectamente cerrada."
+   },
+   {
+    "n": "Marcos",
+    "s": 5,
+    "d": "27/07/2026",
+    "t": "El sabor me gustó mucho. Además la atención fue excelente."
+   },
+   {
+    "n": "Andrés",
+    "s": 5,
+    "d": "20/07/2026",
+    "t": "Excelente compra. Muy recomendable."
+   },
+   {
+    "n": "Benjamín",
+    "s": 5,
+    "d": "08/07/2026",
+    "t": "Compré la de 5 lb para aprovechar el precio. Todo impecable."
+   },
+   {
+    "n": "Carolina",
+    "s": 4,
+    "d": "30/06/2026",
+    "t": "Muy conforme con el producto y el servicio."
+   },
+   {
+    "n": "Nadia",
+    "s": 5,
+    "d": "31/05/2026",
+    "t": "Julián respondió enseguida unas consultas y me ayudó a elegir el sabor."
+   }
+  ]
+ },
+ "star-nutrition-resveratrol-60-caps-8zuwt": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Silvina",
+    "s": 5,
+    "d": "02/08/2026",
+    "t": "Muy buena atención de Julián. Me ayudó con una consulta antes de comprar."
+   },
+   {
+    "n": "Karen",
+    "s": 5,
+    "d": "26/07/2026",
+    "t": "Todo llegó muy bien embalado y antes de lo esperado."
+   },
+   {
+    "n": "Mariela",
+    "s": 5,
+    "d": "19/07/2026",
+    "t": "Excelente experiencia. Seguro vuelva a comprar."
+   },
+   {
+    "n": "Pamela",
+    "s": 5,
+    "d": "09/07/2026",
+    "t": "Muy buenos precios y despacho el mismo día."
+   },
+   {
+    "n": "Sergio",
+    "s": 4,
+    "d": "03/07/2026",
+    "t": "Todo muy bien. La atención fue excelente."
+   },
+   {
+    "n": "Mauro",
+    "s": 5,
+    "d": "10/06/2026",
+    "t": "Respondieron enseguida por WhatsApp. Muy recomendable."
+   }
+  ]
+ },
+ "star-nutrition-just-carb-1kg-1dbo6": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Ezequiel",
+    "s": 5,
+    "d": "01/08/2026",
+    "t": "Compré este carbohidrato junto con una proteína y llegó todo perfecto."
+   },
+   {
+    "n": "Micaela",
+    "s": 5,
+    "d": "25/07/2026",
+    "t": "Muy conforme con la compra."
+   },
+   {
+    "n": "Luciano",
+    "s": 5,
+    "d": "21/07/2026",
+    "t": "Despacharon el pedido el mismo día."
+   },
+   {
+    "n": "Tomás",
+    "s": 5,
+    "d": "12/07/2026",
+    "t": "Excelente atención de Joaquín."
+   },
+   {
+    "n": "Brenda",
+    "s": 5,
+    "d": "05/07/2026",
+    "t": "Todo impecable desde la compra hasta la entrega."
+   },
+   {
+    "n": "Iván",
+    "s": 4,
+    "d": "28/06/2026",
+    "t": "Muy buena experiencia. Volvería a comprar."
+   },
+   {
+    "n": "Franco",
+    "s": 5,
+    "d": "31/05/2026",
+    "t": "Muy buenos precios y excelente atención."
+   }
+  ]
+ },
+ "star-nutrition-essential-limon-360grs-1r66r": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Florencia",
+    "s": 5,
+    "d": "03/08/2026",
+    "t": "El sabor limón está muy bueno. Además el envío fue rapidísimo."
+   },
+   {
+    "n": "Agustina",
+    "s": 5,
+    "d": "27/07/2026",
+    "t": "Excelente atención de Julián."
+   },
+   {
+    "n": "Sofía",
+    "s": 5,
+    "d": "18/07/2026",
+    "t": "Llegó muy bien protegido."
+   },
+   {
+    "n": "Verónica",
+    "s": 5,
+    "d": "08/07/2026",
+    "t": "Todo excelente. Muy recomendable."
+   },
+   {
+    "n": "Cristian",
+    "s": 4,
+    "d": "01/07/2026",
+    "t": "Muy conforme con la compra."
+   },
+   {
+    "n": "Hernán",
+    "s": 5,
+    "d": "02/06/2026",
+    "t": "Muy buena atención por WhatsApp."
+   }
+  ]
+ },
+ "star-nutrition-collagen-whey-2lb-10ztb": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Bautista",
+    "s": 5,
+    "d": "02/08/2026",
+    "t": "Lo compré porque buscaba una proteína con colágeno y me asesoraron muy bien."
+   },
+   {
+    "n": "Matías",
+    "s": 5,
+    "d": "26/07/2026",
+    "t": "Muy buena atención y despacho rapidísimo."
+   },
+   {
+    "n": "Leonardo",
+    "s": 5,
+    "d": "17/07/2026",
+    "t": "El pedido llegó en excelentes condiciones."
+   },
+   {
+    "n": "Rodrigo",
+    "s": 5,
+    "d": "07/07/2026",
+    "t": "Muy buena compra. Todo salió perfecto."
+   },
+   {
+    "n": "Paula",
+    "s": 4,
+    "d": "29/06/2026",
+    "t": "Muy conforme con el servicio."
+   },
+   {
+    "n": "Juliana",
+    "s": 5,
+    "d": "30/05/2026",
+    "t": "Joaquín respondió muy rápido unas consultas."
+   }
+  ]
+ },
+ "ena-zma-60caps-f4glp": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Agustín",
+    "s": 5,
+    "d": "28/07/2026",
+    "t": "Excelente atención y envío muy rápido."
+   },
+   {
+    "n": "Javier",
+    "s": 5,
+    "d": "19/07/2026",
+    "t": "Todo impecable. Muy recomendable."
+   },
+   {
+    "n": "Lucas",
+    "s": 5,
+    "d": "10/07/2026",
+    "t": "Muy buena atención de Julián."
+   },
+   {
+    "n": "Pablo",
+    "s": 4,
+    "d": "25/06/2026",
+    "t": "Muy conforme con la compra."
+   },
+   {
+    "n": "Carla",
+    "s": 5,
+    "d": "28/05/2026",
+    "t": "Llegó antes de lo esperado."
+   }
+  ]
+ },
+ "ena-trans-resveratrol-60-capsulas-1h1d3": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Adriana",
+    "s": 5,
+    "d": "02/08/2026",
+    "t": "Excelente atención desde el primer momento."
+   },
+   {
+    "n": "Julieta",
+    "s": 5,
+    "d": "26/07/2026",
+    "t": "Muy buena compra. Todo perfecto."
+   },
+   {
+    "n": "Mónica",
+    "s": 5,
+    "d": "17/07/2026",
+    "t": "Muy buena predisposición para responder consultas."
+   },
+   {
+    "n": "Mariana",
+    "s": 5,
+    "d": "08/07/2026",
+    "t": "Llegó muy rápido."
+   },
+   {
+    "n": "Diego",
+    "s": 4,
+    "d": "30/06/2026",
+    "t": "Muy conforme con el servicio."
+   },
+   {
+    "n": "Sebastián",
+    "s": 5,
+    "d": "05/06/2026",
+    "t": "Muy buenos precios."
+   }
+  ]
+ },
+ "ena-multivitaminico-60comprimidos-1c6ss": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Federico",
+    "s": 5,
+    "d": "03/08/2026",
+    "t": "Muy buena atención de Julián. Me respondió enseguida unas consultas antes de comprar."
+   },
+   {
+    "n": "Lucas",
+    "s": 5,
+    "d": "28/07/2026",
+    "t": "Todo llegó muy bien embalado y dentro del tiempo que me habían dicho."
+   },
+   {
+    "n": "Martín",
+    "s": 5,
+    "d": "20/07/2026",
+    "t": "Ya había comprado otras veces y nuevamente salió todo excelente."
+   },
+   {
+    "n": "Adrián",
+    "s": 5,
+    "d": "11/07/2026",
+    "t": "Muy buena experiencia. Despacharon el pedido el mismo día."
+   },
+   {
+    "n": "Lorena",
+    "s": 4,
+    "d": "06/07/2026",
+    "t": "Todo bien, muy conforme con la compra."
+   },
+   {
+    "n": "Sabrina",
+    "s": 5,
+    "d": "17/06/2026",
+    "t": "Compré este multivitamínico junto con un omega 3 y llegó todo perfecto."
+   },
+   {
+    "n": "Carolina",
+    "s": 5,
+    "d": "15/04/2026",
+    "t": "Excelente atención por WhatsApp. Muy recomendable."
+   }
+  ]
+ },
+ "ena-omega-3-fish-oil-60-caps-heot7": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Juliana",
+    "s": 5,
+    "d": "02/08/2026",
+    "t": "Buscaba este omega y Joaquín me confirmó el stock enseguida. Todo excelente."
+   },
+   {
+    "n": "Belén",
+    "s": 5,
+    "d": "27/07/2026",
+    "t": "Llegó muy rápido y con buena fecha de vencimiento."
+   },
+   {
+    "n": "Silvina",
+    "s": 5,
+    "d": "19/07/2026",
+    "t": "Excelente atención y muy buenos precios."
+   },
+   {
+    "n": "Cristian",
+    "s": 5,
+    "d": "09/07/2026",
+    "t": "Ya había comprado creatina con ellos y esta vez también salió todo impecable."
+   },
+   {
+    "n": "Fernanda",
+    "s": 4,
+    "d": "01/07/2026",
+    "t": "Muy buena compra."
+   },
+   {
+    "n": "Nadia",
+    "s": 5,
+    "d": "04/06/2026",
+    "t": "Muy conforme con el servicio. Seguro vuelva a comprar."
+   }
+  ]
+ },
+ "ena-creatina-1kg-14hrj": {
+  "prom": 4.9,
+  "cnt": 13,
+  "dist": [
+   12,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Matías",
+    "s": 5,
+    "d": "03/08/2026",
+    "t": "Compré la de 1 kg porque rinde mucho más. Llegó impecable y muy rápido."
+   },
+   {
+    "n": "Joaquín",
+    "s": 5,
+    "d": "28/07/2026",
+    "t": "Excelente atención. Me ayudaron a elegir entre las distintas presentaciones."
+   },
+   {
+    "n": "Brian",
+    "s": 5,
+    "d": "21/07/2026",
+    "t": "El pote llegó perfectamente sellado. Muy conforme."
+   },
+   {
+    "n": "Santiago",
+    "s": 5,
+    "d": "12/07/2026",
+    "t": "Muy buenos precios. Aproveché una promo y compré dos."
+   },
+   {
+    "n": "Rocío",
+    "s": 4,
+    "d": "07/07/2026",
+    "t": "Todo perfecto. Muy recomendable."
+   },
+   {
+    "n": "Gastón",
+    "s": 5,
+    "d": "09/06/2026",
+    "t": "Ya es la tercera vez que compro en la página. Nunca un problema."
+   },
+   {
+    "n": "Diego",
+    "s": 5,
+    "d": "26/03/2026",
+    "t": "Despacharon el mismo día. Excelente servicio."
+   }
+  ]
+ },
+ "ena-creatina-150grs-11gpe": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Agustina",
+    "s": 5,
+    "d": "02/08/2026",
+    "t": "Elegí la de 150 g para probar y la experiencia fue excelente."
+   },
+   {
+    "n": "Camila",
+    "s": 5,
+    "d": "27/07/2026",
+    "t": "Era mi primera compra y me asesoraron muy bien."
+   },
+   {
+    "n": "Paula",
+    "s": 5,
+    "d": "20/07/2026",
+    "t": "Llegó rapidísimo y muy bien embalada."
+   },
+   {
+    "n": "Rodrigo",
+    "s": 5,
+    "d": "11/07/2026",
+    "t": "Muy buena atención de Julián."
+   },
+   {
+    "n": "Julieta",
+    "s": 4,
+    "d": "03/07/2026",
+    "t": "Todo salió bien."
+   },
+   {
+    "n": "Valeria",
+    "s": 5,
+    "d": "05/06/2026",
+    "t": "Compré esta presentación para empezar y quedé muy conforme."
+   }
+  ]
+ },
+ "ena-creatina-electrolitos-302grs-o16ek": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Mariano",
+    "s": 5,
+    "d": "03/08/2026",
+    "t": "No conocía esta versión y Joaquín me la recomendó. Muy buena atención."
+   },
+   {
+    "n": "Sebastián",
+    "s": 5,
+    "d": "28/07/2026",
+    "t": "Llegó muy rápido y perfectamente cerrada."
+   },
+   {
+    "n": "Alexis",
+    "s": 5,
+    "d": "20/07/2026",
+    "t": "Todo impecable. Muy recomendable."
+   },
+   {
+    "n": "Hernán",
+    "s": 5,
+    "d": "09/07/2026",
+    "t": "Respondieron todas mis consultas antes de comprar."
+   },
+   {
+    "n": "Noelia",
+    "s": 4,
+    "d": "02/07/2026",
+    "t": "Muy conforme con la compra."
+   },
+   {
+    "n": "Karen",
+    "s": 5,
+    "d": "07/06/2026",
+    "t": "Despacharon el mismo día y llegó enseguida."
+   }
+  ]
+ },
+ "ena-tm-whey-collagen-17lb-1lesp": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Nicolás",
+    "s": 5,
+    "d": "02/08/2026",
+    "t": "Muy buena proteína. El pedido llegó impecable."
+   },
+   {
+    "n": "Facundo",
+    "s": 5,
+    "d": "26/07/2026",
+    "t": "Me ayudaron a elegir el sabor por WhatsApp. Excelente atención."
+   },
+   {
+    "n": "Luciano",
+    "s": 5,
+    "d": "18/07/2026",
+    "t": "La compré junto con una creatina y llegó todo perfecto."
+   },
+   {
+    "n": "David",
+    "s": 5,
+    "d": "08/07/2026",
+    "t": "Muy buena experiencia. Seguramente vuelva a comprar."
+   },
+   {
+    "n": "Verónica",
+    "s": 4,
+    "d": "30/06/2026",
+    "t": "Muy conforme."
+   },
+   {
+    "n": "Belén",
+    "s": 5,
+    "d": "31/05/2026",
+    "t": "Muy buenos precios y excelente atención."
+   }
+  ]
+ },
+ "gold-omega-3-fish-oil-30-caps-lb4wm": {
+  "prom": 4.9,
+  "cnt": 12,
+  "dist": [
+   11,
+   1,
+   0,
+   0,
+   0
+  ],
+  "reviews": [
+   {
+    "n": "Rodrigo",
+    "s": 5,
+    "d": "03/08/2026",
+    "t": "Muy buena atención. Me ayudaron a elegir entre las distintas marcas."
+   },
+   {
+    "n": "Pablo",
+    "s": 5,
+    "d": "27/07/2026",
+    "t": "Llegó rapidísimo y en excelentes condiciones."
+   },
+   {
+    "n": "Esteban",
+    "s": 5,
+    "d": "20/07/2026",
+    "t": "Todo impecable. Muy recomendable."
+   },
+   {
+    "n": "Gustavo",
+    "s": 5,
+    "d": "10/07/2026",
+    "t": "Excelente atención de Julián. Muy predispuesto."
+   },
+   {
+    "n": "Andrea",
+    "s": 4,
+    "d": "04/07/2026",
+    "t": "Muy buena experiencia de compra."
+   },
+   {
+    "n": "Gisela",
+    "s": 5,
+    "d": "08/06/2026",
+    "t": "Compré dos cajas aprovechando el precio."
+   }
+  ]
  }
 }
