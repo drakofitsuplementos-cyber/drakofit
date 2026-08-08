@@ -1054,41 +1054,57 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(tick, 1000);
 })();
 
-
 /* ============================================================
-   LISTADO · tarjeta sin stock -> botón "Solicitar stock"
-   Cambia el "Comprar" del quickshop por "Solicitar stock" (verde)
-   cuando TODAS las variantes están sin stock. El botón abre el
-   quickshop nativo (ahí el cliente elige variante y solicita).
+   LISTADO · botón nuevo "Solicitar stock" (donde iría "Comprar")
+   Cuando TODAS las variantes están sin stock, crea un botón verde
+   en la zona de acciones de la tarjeta que abre WhatsApp con el
+   producto. Se quita solo si el producto vuelve a tener stock.
    ============================================================ */
 (function(){
-  try{var c='.drk-stock-btn{background:#25D366 !important;border:1.5px solid #d4af37 !important;color:#fff !important;}';var s=document.createElement('style');s.appendChild(document.createTextNode(c));(document.head||document.documentElement).appendChild(s);}catch(e){}
+  var WSP = window.DRK_WSP || "5491176387287";
+  var WA = '<svg viewBox="0 0 24 24" fill="#fff" style="width:18px;height:18px;flex:0 0 auto;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.003a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 5.82 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.98-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03 0 1.19.87 2.35.99 2.51.12.16 1.71 2.61 4.15 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>';
+
   function todasSinStock(cont){
     var vs=null; try{ vs=JSON.parse(cont.getAttribute('data-variants')); }catch(e){ return false; }
     if(!vs||!vs.length) return false;
     for(var i=0;i<vs.length;i++){ if(vs[i].available!==false) return false; }
     return true;
   }
+  function nombreCard(card){
+    var n=card.querySelector('.js-item-name');
+    if(n && n.innerText.trim()) return n.innerText.trim();
+    var l=card.querySelector('a[href*="/productos/"]');
+    return l ? ((l.getAttribute('title')||l.innerText||'Producto').trim()) : 'Producto';
+  }
   function tickCards(){
     var conts=document.querySelectorAll('.js-quickshop-container[data-variants]');
     for(var i=0;i<conts.length;i++){
       var cont=conts[i];
-      if(cont.closest('#quickshop-modal')) continue;         // el modal no, solo tarjetas
+      if(cont.closest('#quickshop-modal')) continue;              // solo tarjetas del listado
       var card=cont.closest('.js-item-product'); if(!card) continue;
-      var word=card.querySelector('.js-open-quickshop-wording');
-      var btn=card.querySelector('.js-quickshop-modal-open');
-      if(!word||!btn) continue;
+      var yaHay=card.querySelector('.drk-stock-listado');
       if(todasSinStock(cont)){
-        if(btn.getAttribute('data-drk-stock')!=='1'){
-          btn.setAttribute('data-drk-stock','1');
-          btn.setAttribute('data-drk-word', word.textContent);
-          word.textContent='Solicitar stock';
-          btn.classList.add('drk-stock-btn');
-        }
-      } else if(btn.getAttribute('data-drk-stock')==='1'){
-        btn.setAttribute('data-drk-stock','0');
-        word.textContent=btn.getAttribute('data-drk-word')||'Comprar';
-        btn.classList.remove('drk-stock-btn');
+        if(yaHay) continue;
+        var slot=card.querySelector('.js-quickshop-or-stock-container')
+              || card.querySelector('.js-item-quickshop-container')
+              || card.querySelector('.js-item-info, .item-info')
+              || card;
+        // ocultar el cartel/etiqueta nativa de "sin stock" que ocupa ese lugar (si la hay)
+        var nativo=slot.querySelector('.js-item-quickshop-container, .js-stock-label-private');
+        var b=document.createElement('a');
+        b.className='drk-stock-listado';
+        b.href='#';
+        b.innerHTML=WA+' Solicitar stock';
+        b.style.cssText='display:flex;align-items:center;justify-content:center;gap:8px;width:100%;box-sizing:border-box;background:#25D366;color:#fff;font-family:\'Oswald\',\'Arial Narrow\',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:13px;padding:10px;margin-top:6px;border:1.5px solid #d4af37;border-radius:7px;text-decoration:none;box-shadow:0 0 10px rgba(37,211,102,.35);cursor:pointer;';
+        var nom=nombreCard(card);
+        b.addEventListener('click',function(e){
+          e.preventDefault(); e.stopPropagation();
+          var msg="Hola! Queria solicitar stock del producto:\n\n"+nom;
+          window.location.href="https://wa.me/"+WSP+"?text="+encodeURIComponent(msg);
+        });
+        slot.appendChild(b);
+      } else {
+        if(yaHay) yaHay.parentNode.removeChild(yaHay);
       }
     }
   }
