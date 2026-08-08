@@ -1056,11 +1056,15 @@ document.addEventListener("DOMContentLoaded", function () {
         var b=document.createElement('div');
         b.className='drk-stock-listado';
         b.setAttribute('role','button'); b.setAttribute('tabindex','0');
-        b.innerHTML=WA+' Solicitar stock';
-        b.style.cssText='display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;width:fit-content;max-width:calc(100% - 8px);margin:12px auto 6px;padding:9px 16px;background:#25D366;color:#fff;font-family:\'Oswald\',\'Arial Narrow\',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-size:12px;line-height:1;border:1.5px solid #d4af37;border-radius:8px;text-decoration:none;box-shadow:0 0 10px rgba(37,211,102,.35);cursor:pointer;overflow:hidden;';
-        var nom=nombreCard(card);
-        function abrir(e){ e.preventDefault(); e.stopPropagation(); var msg="Hola! Queria solicitar stock del producto:\n\n"+nom; window.location.href="https://wa.me/"+WSP+"?text="+encodeURIComponent(msg); }
-        b.addEventListener('click', abrir);
+        b.innerHTML='Solicitar stock';
+        b.style.cssText='display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;width:fit-content;max-width:calc(100% - 8px);margin:12px auto 6px;padding:9px 16px;background:#25D366;color:#fff;font-family:\'Oswald\',\'Arial Narrow\',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:13px;line-height:1;border:1.5px solid #d4af37;border-radius:8px;text-decoration:none;box-shadow:0 0 10px rgba(37,211,102,.35);cursor:pointer;overflow:hidden;';
+        (function(tarjeta){
+          b.addEventListener('click', function(e){
+            e.preventDefault(); e.stopPropagation();
+            var msg="Hola! Queria solicitar stock del producto:\n\n"+nombreCard(tarjeta);
+            window.location.href="https://wa.me/"+WSP+"?text="+encodeURIComponent(msg);
+          });
+        })(card);
         if(ancla && ancla.parentNode){ ancla.parentNode.insertBefore(b, ancla.nextSibling); }
         else { var desc=card.querySelector('.js-item-description'); if(desc){ desc.appendChild(b); } }
       } else {
