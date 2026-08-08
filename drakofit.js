@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!botonConsulta) {
         botonConsulta = document.createElement("a");
         botonConsulta.className = "btn btn-consultar-stock btn-block mb-4";
-        botonConsulta.innerText = "Solicitar stock";
+        botonConsulta.innerHTML = '<svg viewBox="0 0 24 24" fill="#fff" style="width:19px;height:19px;flex:0 0 auto;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.003a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 5.82 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.98-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03 0 1.19.87 2.35.99 2.51.12.16 1.71 2.61 4.15 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg> Solicitar stock';
         botonConsulta.href = "#";
 
         /* ===== VISUAL DEL BOTON (solo estetica) ===== */
@@ -81,7 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
         botonConsulta.style.fontSize = "15px";
         botonConsulta.style.padding = "14px";
         botonConsulta.style.textAlign = "center";
-        botonConsulta.style.display = "block";
+        botonConsulta.style.display = "flex";
+        botonConsulta.style.alignItems = "center";
+        botonConsulta.style.justifyContent = "center";
+        botonConsulta.style.gap = "8px";
         botonConsulta.style.border = "2px solid #d4af37";
         botonConsulta.style.borderRadius = "8px";
         botonConsulta.style.textDecoration = "none";
@@ -452,7 +455,20 @@ document.addEventListener("DOMContentLoaded", function () {
     var btn = form.querySelector('input.js-addtocart, button.js-addtocart');
     if (!btn) return;
 
-    var sinStock = btn.classList.contains('nostock') || btn.disabled;
+    var sinStock = (function(){
+      var sel = scope.querySelector('.js-insta-variant.selected');
+      if (sel && sel.classList.contains('btn-variant-no-stock')) return true;
+      var cont = scope.querySelector('[data-variants]') || document.querySelector('#quickshop-modal [data-variants]');
+      var vs = null; if (cont){ try{ vs = JSON.parse(cont.getAttribute('data-variants')); }catch(e){} }
+      if (vs && vs.length){
+        var opt = sel ? (sel.getAttribute('data-option')||'').trim() : null;
+        if (opt){ for (var i=0;i<vs.length;i++){ if ((vs[i].option0||'')===opt) return vs[i].available===false; } }
+        else { if (vs.length===1) return vs[0].available===false; var todas=true; for (var j=0;j<vs.length;j++){ if (vs[j].available!==false){ todas=false; break; } } if (todas) return true; }
+      }
+      if (btn.disabled || btn.classList.contains('nostock')) return true;
+      var ph = form.querySelector('.js-addtocart-placeholder'); if (ph){ var st=getComputedStyle(ph); if (st.display!=='none' && ph.offsetParent!==null) return true; }
+      return false;
+    })();
     var yaExiste = form.querySelector('.btn-solicitar-qs');
 
     if (sinStock) {
@@ -464,7 +480,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var a = document.createElement('a');
         a.className = 'btn btn-solicitar-qs';
         a.href = '#';
-        a.innerText = 'Solicitar stock';
+        a.innerHTML = '<svg viewBox="0 0 24 24" fill="#fff" style="width:19px;height:19px;flex:0 0 auto;"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.004c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.003a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 5.82 2.41 8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.98-.14.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03 0 1.19.87 2.35.99 2.51.12.16 1.71 2.61 4.15 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg> Solicitar stock';
         a.style.backgroundColor = '#25D366';
         a.style.color = '#ffffff';
         a.style.fontFamily = "'Oswald','Arial Narrow',sans-serif";
@@ -475,7 +491,10 @@ document.addEventListener("DOMContentLoaded", function () {
         a.style.padding = '14px';
         a.style.width = '100%';
         a.style.textAlign = 'center';
-        a.style.display = 'block';
+        a.style.display = 'flex';
+        a.style.alignItems = 'center';
+        a.style.justifyContent = 'center';
+        a.style.gap = '8px';
         a.style.border = '2px solid #d4af37';
         a.style.borderRadius = '8px';
         a.style.textDecoration = 'none';
@@ -1035,3 +1054,44 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(tick, 1000);
 })();
 
+
+/* ============================================================
+   LISTADO · tarjeta sin stock -> botón "Solicitar stock"
+   Cambia el "Comprar" del quickshop por "Solicitar stock" (verde)
+   cuando TODAS las variantes están sin stock. El botón abre el
+   quickshop nativo (ahí el cliente elige variante y solicita).
+   ============================================================ */
+(function(){
+  try{var c='.drk-stock-btn{background:#25D366 !important;border:1.5px solid #d4af37 !important;color:#fff !important;}';var s=document.createElement('style');s.appendChild(document.createTextNode(c));(document.head||document.documentElement).appendChild(s);}catch(e){}
+  function todasSinStock(cont){
+    var vs=null; try{ vs=JSON.parse(cont.getAttribute('data-variants')); }catch(e){ return false; }
+    if(!vs||!vs.length) return false;
+    for(var i=0;i<vs.length;i++){ if(vs[i].available!==false) return false; }
+    return true;
+  }
+  function tickCards(){
+    var conts=document.querySelectorAll('.js-quickshop-container[data-variants]');
+    for(var i=0;i<conts.length;i++){
+      var cont=conts[i];
+      if(cont.closest('#quickshop-modal')) continue;         // el modal no, solo tarjetas
+      var card=cont.closest('.js-item-product'); if(!card) continue;
+      var word=card.querySelector('.js-open-quickshop-wording');
+      var btn=card.querySelector('.js-quickshop-modal-open');
+      if(!word||!btn) continue;
+      if(todasSinStock(cont)){
+        if(btn.getAttribute('data-drk-stock')!=='1'){
+          btn.setAttribute('data-drk-stock','1');
+          btn.setAttribute('data-drk-word', word.textContent);
+          word.textContent='Solicitar stock';
+          btn.classList.add('drk-stock-btn');
+        }
+      } else if(btn.getAttribute('data-drk-stock')==='1'){
+        btn.setAttribute('data-drk-stock','0');
+        word.textContent=btn.getAttribute('data-drk-word')||'Comprar';
+        btn.classList.remove('drk-stock-btn');
+      }
+    }
+  }
+  document.addEventListener('DOMContentLoaded', tickCards);
+  setInterval(tickCards, 1000);
+})();
