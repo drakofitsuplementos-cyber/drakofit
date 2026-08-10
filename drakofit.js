@@ -1075,3 +1075,32 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener('DOMContentLoaded', tickCards);
   setInterval(tickCards, 1000);
 })();
+
+/* ============================================================
+   DESPACHO BAR · más grande + sticky pegado al header
+   Lo coloca justo antes del header y lo hace sticky; empuja el
+   top del header (sticky) para que queden apilados sin taparse.
+   ============================================================ */
+(function(){
+  try{
+    var c='#nf-despacho-bar{padding:14px 16px !important;}'+
+      '#nf-despacho-bar .nf-txt{font-size:16px !important;}'+
+      '#nf-despacho-bar .nf-ico{font-size:23px !important;}'+
+      '#nf-despacho-bar .nf-cap,#nf-despacho-bar .nf-sep{font-size:18px !important;}'+
+      '@media(max-width:680px){#nf-despacho-bar .nf-txt{font-size:13.5px !important;}#nf-despacho-bar .nf-ico{font-size:19px !important;}}';
+    var s=document.createElement('style');s.appendChild(document.createTextNode(c));(document.head||document.documentElement).appendChild(s);
+  }catch(e){}
+  function sync(){
+    var bar=document.getElementById('nf-despacho-bar');
+    var head=document.querySelector('header.js-head-main, header.head-main, header');
+    if(!bar||!head||!head.parentNode) return;
+    if(getComputedStyle(bar).display==='none'){ head.style.removeProperty('top'); return; }
+    if(bar.nextElementSibling!==head){ try{ head.parentNode.insertBefore(bar, head); }catch(e){} }
+    bar.style.position='sticky'; bar.style.top='0'; bar.style.zIndex='1002';
+    head.style.setProperty('top', (bar.offsetHeight||0)+'px', 'important');
+  }
+  window.addEventListener('scroll', sync, {passive:true});
+  window.addEventListener('resize', sync);
+  document.addEventListener('DOMContentLoaded', sync);
+  setInterval(sync, 800);
+})();
