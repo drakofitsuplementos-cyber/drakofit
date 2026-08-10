@@ -1077,13 +1077,13 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 
 /* ============================================================
-   DESPACHO BAR · más grande + sticky pegado al header
-   Lo coloca justo antes del header y lo hace sticky; empuja el
-   top del header (sticky) para que queden apilados sin taparse.
+   DESPACHO BAR · más grande + FIXED arriba (robusto ante overflow)
+   Usa position:fixed y empuja el body/header con padding-top para
+   que no tape el contenido. No depende del overflow de ningún padre.
    ============================================================ */
 (function(){
   try{
-    var c='#nf-despacho-bar{padding:14px 16px !important;}'+
+    var c='#nf-despacho-bar{padding:14px 16px !important;position:fixed !important;top:0 !important;left:0 !important;right:0 !important;width:100% !important;z-index:100000 !important;margin:0 !important;}'+
       '#nf-despacho-bar .nf-txt{font-size:16px !important;}'+
       '#nf-despacho-bar .nf-ico{font-size:23px !important;}'+
       '#nf-despacho-bar .nf-cap,#nf-despacho-bar .nf-sep{font-size:18px !important;}'+
@@ -1093,14 +1093,97 @@ document.addEventListener("DOMContentLoaded", function () {
   function sync(){
     var bar=document.getElementById('nf-despacho-bar');
     var head=document.querySelector('header.js-head-main, header.head-main, header');
-    if(!bar||!head||!head.parentNode) return;
-    if(getComputedStyle(bar).display==='none'){ head.style.removeProperty('top'); return; }
-    if(bar.nextElementSibling!==head){ try{ head.parentNode.insertBefore(bar, head); }catch(e){} }
-    bar.style.position='sticky'; bar.style.top='0'; bar.style.zIndex='1002';
-    head.style.setProperty('top', (bar.offsetHeight||0)+'px', 'important');
+    if(!bar) return;
+    if(getComputedStyle(bar).display==='none'){
+      document.body.style.removeProperty('padding-top');
+      if(head) head.style.removeProperty('top');
+      return;
+    }
+    var h=bar.offsetHeight||0;
+    /* empuja todo hacia abajo la altura de la barra fija */
+    document.body.style.setProperty('padding-top', h+'px', 'important');
+    /* el header sticky del tema queda justo debajo de la barra */
+    if(head) head.style.setProperty('top', h+'px', 'important');
   }
-  window.addEventListener('scroll', sync, {passive:true});
   window.addEventListener('resize', sync);
+  window.addEventListener('load', sync);
   document.addEventListener('DOMContentLoaded', sync);
   setInterval(sync, 800);
+})();
+
+/* ============================================================
+   OPINIONES DE CLIENTES · carrusel al final del home
+   Lee resenas.json (GitHub), junta las reseñas con texto de todos
+   los productos, calcula promedio global y arma un carrusel que se
+   mueve solo. Solo en la home. setInterval para colocarlo.
+   ============================================================ */
+(function(){
+  var URL="https://raw.githubusercontent.com/drakofitsuplementos-cyber/drakofit/refs/heads/main/resenas.json";
+  var CSS=".drk-op{padding:34px 0 30px;background:linear-gradient(180deg,#0d0d0d,#0b0b0b);overflow:hidden;}"+
+    ".drk-op__h{text-align:center;margin-bottom:22px;padding:0 16px;}"+
+    ".drk-op__h .t{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-weight:700;font-size:26px;color:#fff;margin:0;}"+
+    ".drk-op__badge{display:inline-flex;align-items:center;gap:10px;margin-top:12px;background:#141414;border:1px solid rgba(212,175,55,.4);border-radius:40px;padding:8px 18px;}"+
+    ".drk-op__badge .num{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:24px;color:#d4af37;line-height:1;}"+
+    ".drk-op__badge .st{color:#d4af37;font-size:16px;letter-spacing:1px;}"+
+    ".drk-op__badge .cnt{color:#b9b9b9;font-size:12px;border-left:1px solid rgba(255,255,255,.15);padding-left:10px;}"+
+    ".drk-op__mask{overflow:hidden;position:relative;}"+
+    ".drk-op__track{display:flex;gap:16px;width:max-content;padding:6px 16px;animation:drkOpM 45s linear infinite;}"+
+    ".drk-op__mask:hover .drk-op__track{animation-play-state:paused;}"+
+    "@keyframes drkOpM{from{transform:translateX(0)}to{transform:translateX(-50%)}}"+
+    ".op-card{flex:0 0 auto;width:290px;background:linear-gradient(180deg,#181818,#111);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,.35);box-sizing:border-box;}"+
+    ".op-card__top{display:flex;align-items:center;gap:11px;margin-bottom:10px;}"+
+    ".op-card__av{width:42px;height:42px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:17px;color:#141414;background:linear-gradient(135deg,#f6dd86,#c9a227);}"+
+    ".op-card__who{min-width:0;}"+
+    ".op-card__nm{font-weight:600;color:#fff;font-size:14.5px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}"+
+    ".op-card__ver{display:inline-flex;align-items:center;gap:3px;color:#36d36a;font-size:10px;font-weight:700;text-transform:uppercase;}"+
+    ".op-card__ver svg{width:11px;height:11px;}"+
+    ".op-card__date{color:#8a8a8a;font-size:11px;margin-top:1px;}"+
+    ".op-card__stars{color:#f5b840;font-size:14px;letter-spacing:1px;margin-bottom:7px;}"+
+    ".op-card__txt{color:#d8d8d8;font-size:13px;line-height:1.5;margin:0;}"+
+    ".op-card__q{color:rgba(212,175,55,.3);font-size:30px;font-family:Georgia,serif;line-height:0;margin-left:-2px;}"+
+    ".drk-op__foot{text-align:center;color:#7a7a7a;font-size:11px;margin-top:20px;display:flex;align-items:center;justify-content:center;gap:6px;}"+
+    ".drk-op__foot svg{width:13px;height:13px;}";
+  try{var s=document.createElement('style');s.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(s);}catch(e){}
+
+  function esHome(){ return location.pathname==='/' || location.pathname===''; }
+  function stars(n){var o="";for(var i=0;i<5;i++)o+=(i<n?'\u2605':'\u2606');return o;}
+  var CK='<svg viewBox="0 0 24 24" fill="none" stroke="#36d36a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>';
+  var puesto=false;
+
+  function colocar(revs, prom, total){
+    if(puesto || !esHome()) return;
+    var cont=document.querySelector('.js-home-sections-container') || document.querySelector('footer');
+    if(!cont) return;
+    var sec=document.createElement('div'); sec.className='drk-op'; sec.id='drk-opiniones';
+    var cards=revs.map(function(r){
+      return '<div class="op-card"><div class="op-card__top"><div class="op-card__av">'+(r.n||'?').charAt(0)+'</div>'+
+        '<div class="op-card__who"><div class="op-card__nm">'+(r.n||'')+' <span class="op-card__ver">'+CK+'Verificada</span></div>'+
+        '<div class="op-card__date">'+(r.d||'')+'</div></div></div>'+
+        '<div class="op-card__stars">'+stars(r.s||5)+'</div>'+
+        '<p class="op-card__txt"><span class="op-card__q">\u201C</span>'+(r.t||'')+'</p></div>';
+    }).join('');
+    sec.innerHTML='<div class="drk-op__h"><h2 class="t">Opiniones de nuestros clientes</h2>'+
+      '<div class="drk-op__badge"><span class="num">'+prom+'</span><span class="st">\u2605\u2605\u2605\u2605\u2605</span><span class="cnt">'+total+' opiniones</span></div></div>'+
+      '<div class="drk-op__mask"><div class="drk-op__track">'+cards+cards+'</div></div>'+
+      '<div class="drk-op__foot">'+CK+' Todas las opiniones son de compras verificadas</div>';
+    if(cont.tagName==='FOOTER'){ cont.parentNode.insertBefore(sec, cont); } else { cont.appendChild(sec); }
+    puesto=true;
+  }
+
+  function init(){
+    if(!esHome()) return;
+    fetch(URL).then(function(r){return r.json();}).then(function(d){
+      var revs=[], total=0, suma=0;
+      for(var slug in d){ if(!d.hasOwnProperty(slug)) continue;
+        var info=d[slug]; total+=(info.cnt||0); suma+=(info.prom||0)*(info.cnt||0);
+        (info.reviews||[]).forEach(function(r){ if(r.t) revs.push(r); });
+      }
+      /* mezclar un poco para variedad */
+      revs.sort(function(){return Math.random()-0.5;});
+      revs=revs.slice(0,20);
+      var prom=total? (suma/total).toFixed(1).replace('.',',') : '5,0';
+      var iv=setInterval(function(){ colocar(revs, prom, total); if(puesto) clearInterval(iv); }, 700);
+    }).catch(function(){});
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
