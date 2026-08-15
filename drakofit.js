@@ -548,12 +548,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 (function(){
-  var PISO = 120000;   // <-- piso de envío gratis (debe coincidir con tu config nativa)
+  var PISO_PAIS = 120000;   // envío gratis a todo el país (config nativa)
+  var PISO_CABA = 70000;    // envío gratis CABA sobre subtotal de lista/tarjeta (config nativa)
   var yaProg = false;
 
   function num(txt){ var l=(txt||'').replace(/[^\d.,]/g,'').replace(/\./g,'').replace(',','.'); var n=parseFloat(l); return (!isNaN(n)&&n>0)?n:null; }
   function fmt(n){ return '$'+n.toLocaleString('es-AR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
   function getSub(){ var el=document.querySelector('.js-cart-subtotal-price, .js-subtotal-price'); return el?num(el.innerText):null; }
+  /* detecta si la opción de envío elegida es CABA (mismo criterio que el voucher) */
+  function esCABA(){
+    var sel=document.querySelector('input.js-shipping-method:checked')||document.querySelector('input.js-shipping-method');
+    if(!sel) return null;                       // todavía no cotizó -> null
+    var li=sel.closest('.js-shipping-list-item')||sel.closest('li'); if(!li) return false;
+    var n=li.querySelector('[data-component="option.name"]');
+    return n ? /CABA/i.test(n.innerText) : false;
+  }
 
   function insertar(){
     if(yaProg) return;
@@ -573,15 +582,19 @@ document.addEventListener("DOMContentLoaded", function () {
     var d=document.getElementById('nf-envio-prog'); if(!d) return;
     var sub=getSub();
     if(sub===null){ d.style.display='none'; return; }
+    /* elegir piso según zona: si eligió CABA -> 70.000; si no (interior o sin cotizar) -> 120.000 */
+    var caba=esCABA();
+    var PISO = (caba===true) ? PISO_CABA : PISO_PAIS;
+    var zona = (caba===true) ? ' en CABA' : '';
     var txt=d.querySelector('.nfe-txt'), fill=d.querySelector('.nfe-fill');
     var pct=Math.min(100, (sub/PISO)*100);
     fill.style.width=pct+'%';
     if(sub>=PISO){
       d.classList.add('nf-ok');
-      txt.innerHTML='&#127881; &iexcl;Env&iacute;o GRATIS desbloqueado!';
+      txt.innerHTML='&#127881; &iexcl;Ten&eacute;s env&iacute;o GRATIS'+zona+'!';
     } else {
       d.classList.remove('nf-ok');
-      txt.innerHTML='Sum&aacute; <b>'+fmt(PISO-sub)+'</b> m&aacute;s y tu env&iacute;o es <b>GRATIS</b>';
+      txt.innerHTML='Te faltan <b>'+fmt(PISO-sub)+'</b> para env&iacute;o <b>GRATIS'+zona+'</b>'+(caba===true?' &#128690;':'');
     }
     d.style.display='block';
   }
