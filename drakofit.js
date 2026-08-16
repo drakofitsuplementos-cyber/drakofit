@@ -1200,3 +1200,66 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
+
+/* ============================================================
+   VOUCHER PROMO · DRAKO360 (10% OFF) hasta domingo 23/08 23:59
+   Se ancla a la sección .js-section-products-best-seller (estable,
+   no se descoloca al reordenar). 3 estados: normal / últimas 6h / desaparece.
+   Editar acá: FIN (fecha), CODE (código), OFF (texto descuento).
+   ============================================================ */
+(function(){
+  var FIN  = new Date('2026-08-23T23:59:59-03:00').getTime();  // fin real (ART)
+  var CODE = 'DRAKO360';
+  var OFF  = '10% OFF';
+  var URG_H = 6;   // horas antes del fin -> modo "¡Últimas horas!"
+  var ANCLA = '.js-section-products-best-seller, [data-store="home-products-best-seller"]';
+
+  var CSS=".drk-promo{margin:0 0 16px;border-radius:13px;position:relative;overflow:hidden;background:linear-gradient(100deg,#4a0014,#1a0409 55%,#0d0d0d);border:1.5px solid #d4af37;box-shadow:0 6px 22px rgba(128,0,32,.28);}"+
+    ".drk-promo.urgente{border-color:#ff3b5c;background:linear-gradient(100deg,#4a0012,#230307 55%,#0d0d0d);box-shadow:0 6px 22px rgba(255,59,92,.3);}"+
+    ".drk-promo__in{position:relative;display:flex;align-items:center;gap:18px;padding:12px 20px;flex-wrap:wrap;justify-content:center;}"+
+    ".drk-promo__tag{display:inline-flex;align-items:center;gap:6px;color:#f6dd86;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;white-space:nowrap;}"+
+    ".drk-promo.urgente .drk-promo__tag{color:#ff8fa1;}"+
+    ".drk-promo__dot{width:6px;height:6px;border-radius:50%;background:#f6dd86;animation:drkPromoPulse 1.2s infinite;}"+
+    ".drk-promo.urgente .drk-promo__dot{background:#ff3b5c;animation-duration:.6s;}"+
+    "@keyframes drkPromoPulse{0%,100%{opacity:1}50%{opacity:.3}}"+
+    ".drk-promo__h{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;font-weight:700;font-size:20px;color:#fff;white-space:nowrap;}"+
+    ".drk-promo__h b{color:#d4af37;}.drk-promo.urgente .drk-promo__h b{color:#ff6b83;}"+
+    ".drk-promo__tmr{display:flex;gap:5px;align-items:center;}"+
+    ".drk-promo__n{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:19px;color:#141414;background:linear-gradient(180deg,#f6dd86,#d4af37);border-radius:6px;padding:5px 7px;min-width:32px;text-align:center;line-height:1;font-variant-numeric:tabular-nums;}"+
+    ".drk-promo.urgente .drk-promo__n{background:linear-gradient(180deg,#ff7a90,#ff3b5c);color:#fff;}"+
+    ".drk-promo__s{color:#d4af37;font-weight:700;font-family:'Oswald','Arial Narrow',sans-serif;}.drk-promo.urgente .drk-promo__s{color:#ff3b5c;}"+
+    ".drk-promo__code{display:inline-flex;border-radius:8px;overflow:hidden;border:1.5px dashed #d4af37;white-space:nowrap;}.drk-promo.urgente .drk-promo__code{border-color:#ff3b5c;}"+
+    ".drk-promo__lbl{background:rgba(212,175,55,.12);color:#cfcfcf;font-size:9px;text-transform:uppercase;padding:7px 9px;font-family:'Oswald','Arial Narrow',sans-serif;display:flex;align-items:center;}"+
+    ".drk-promo__val{background:#d4af37;color:#141414;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:15px;letter-spacing:.1em;padding:7px 12px;}.drk-promo.urgente .drk-promo__val{background:#ff3b5c;color:#fff;}";
+  try{var st=document.createElement('style');st.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(st);}catch(e){}
+
+  function z(n){return(n<10?'0':'')+n;}
+  function build(){
+    if(document.getElementById('drk-promo')) return true;
+    var sec=document.querySelector(ANCLA); if(!sec) return false;
+    var d=document.createElement('div'); d.id='drk-promo'; d.className='drk-promo';
+    d.innerHTML='<div class="drk-promo__in">'+
+      '<span class="drk-promo__tag"><span class="drk-promo__dot"></span> <span class="drk-promo__tagtxt">Oferta limitada</span></span>'+
+      '<span class="drk-promo__h">Hasta <b>'+OFF+'</b></span>'+
+      '<span class="drk-promo__tmr"><span class="drk-promo__n" data-u="d">00</span><span class="drk-promo__s">:</span><span class="drk-promo__n" data-u="h">00</span><span class="drk-promo__s">:</span><span class="drk-promo__n" data-u="m">00</span><span class="drk-promo__s">:</span><span class="drk-promo__n" data-u="sc">00</span></span>'+
+      '<span class="drk-promo__code"><span class="drk-promo__lbl">C\u00f3digo</span><span class="drk-promo__val">'+CODE+'</span></span>'+
+      '</div>';
+    sec.insertBefore(d, sec.firstChild);
+    return true;
+  }
+  function tick(){
+    var r=FIN-Date.now(), d=document.getElementById('drk-promo');
+    if(r<=0){ if(d&&d.parentNode) d.parentNode.removeChild(d); return; }   // terminó -> desaparece
+    if(!d){ if(!build()) return; d=document.getElementById('drk-promo'); }
+    var s=Math.floor(r/1000);
+    d.querySelector('[data-u="d"]').textContent=z(Math.floor(s/86400));
+    d.querySelector('[data-u="h"]').textContent=z(Math.floor(s%86400/3600));
+    d.querySelector('[data-u="m"]').textContent=z(Math.floor(s%3600/60));
+    d.querySelector('[data-u="sc"]').textContent=z(s%60);
+    var urg = r <= URG_H*3600*1000;
+    d.classList.toggle('urgente', urg);
+    d.querySelector('.drk-promo__tagtxt').textContent = urg ? '\u00a1\u00daltimas horas!' : 'Oferta limitada';
+  }
+  document.addEventListener('DOMContentLoaded', tick);
+  setInterval(tick, 1000);
+})();
