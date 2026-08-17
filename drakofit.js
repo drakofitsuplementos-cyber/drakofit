@@ -875,78 +875,8 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(tick, 1000);
 })();
 
+/* (cronómetro viejo por producto REMOVIDO — reemplazado por el voucher promo) */
 
-(function(){
-  var OFERTAS = {
-    "combo-fuerza-premium":1,"combo-body-advance-creatina-one-fit":1,"combo-wellness-completo":1,
-    "combo-shaker-proteina-gold":1,"combo-proteina-creatina-ena":1,"combo-colageno-ena-pure-vitamina-c":1,
-    "combo-colageno-plus-vitamina-c":1,"combo-colageno-sport-vitamina-c":1,"combo-proteina-vegana-creatina":1,
-    "combo-colageno-vitamina-c":1,"combo-duo-colageno":1,"combo-duo-whey-ena":1,"combo-salud-y-bienestar":1,
-    "combo-performance":1,"combo-recuperacion-articular":1,"combo-running-endurance":1,"combo-masa-muscular":1,
-    "optimum-nutrition-creatina-monohidrato-300g":1,
-    "body-advance-whey-protein-2lb":1,"star-nutrition-colageno-hidrolizado-limon-210g-1vcqh":1,
-    "one-fit-creatina-200g-vsn6v":1,"star-nutrition-mutant-mass-1-5kg":1,"gold-100-whey-protein-2lbs-1or33":1,
-    "star-nutrition-just-plant-2lb-f5qjc":1,"ena-creatina-doypack-300g":1
-  };
-
-  var RELOJ='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
-  function hash(s){ var h=5381; for(var i=0;i<s.length;i++) h=((h<<5)+h+s.charCodeAt(i))>>>0; return h; }
-  function remaining(slug){ var x=hash(slug); var period=(12+(x%61))*3600*1000; var offset=x%period; return period-((Date.now()+offset)%period); }
-  function z(n){ return (n<10?'0':'')+n; }
-  function parts(ms){ var s=Math.floor(ms/1000); var d=Math.floor(s/86400); s%=86400; var h=Math.floor(s/3600); s%=3600; var m=Math.floor(s/60); s%=60; return {d:d,h:h,m:m,s:s}; }
-  function slugFrom(u){ var m=(u||'').match(/\/productos\/([^\/?#]+)/); return m?m[1]:null; }
-  var CASI = 3600000; // último tramo ("últimas horas") cuando falta < 1 h
-
-  /* ===== LISTADO: cinta al pie de la imagen ===== */
-  function tickListado(){
-    var cards=document.querySelectorAll('.js-item-product');
-    for(var i=0;i<cards.length;i++){
-      var card=cards[i];
-      var link=card.querySelector('a[href*="/productos/"]');
-      var slug=link?slugFrom(link.getAttribute('href')):null;
-      var existing=card.querySelector('.drk-ctimer');
-      var img=card.querySelector('.js-item-image-padding')||card.querySelector('.item-image');
-      if(!slug || !OFERTAS[slug] || !img){ if(existing) existing.parentNode.removeChild(existing); continue; }
-      var el=existing;
-      if(!el){ el=document.createElement('div'); el.className='drk-ctimer'; el.innerHTML=RELOJ+'<span class="drk-ct"></span>'; img.appendChild(el); }
-      var r=remaining(slug),p=parts(r),end=r<CASI;
-      el.className='drk-ctimer'+(end?' end':'');
-      el.querySelector('.drk-ct').textContent = end ? ' \u00a1\u00daltimas horas!' : (' Oferta '+(p.d>0?p.d+'d ':'')+z(p.h)+':'+z(p.m)+':'+z(p.s));
-    }
-  }
-
-  /* ===== FICHA: cronómetro grande abajo ===== */
-  function unidad(k,l){ return '<div class="drk-timer__u"><span class="drk-timer__n" data-u="'+k+'"></span><span class="drk-timer__l">'+l+'</span></div>'; }
-  function tickFicha(){
-    if(!document.querySelector('h1.js-product-name')) return;
-    var slug=slugFrom(location.pathname);
-    var box=document.getElementById('drk-timer-ficha');
-    if(!slug || !OFERTAS[slug]){ if(box) box.parentNode.removeChild(box); return; }
-    if(!box){
-      var anchor=document.getElementById('drk-vch-ficha');
-      if(!anchor){ var b=document.querySelector('input.js-addtocart[data-store="product-buy-button"]'); anchor=b?(b.closest('form.js-product-form')||b.parentNode):null; }
-      if(!anchor||!anchor.parentNode) return;
-      box=document.createElement('div'); box.id='drk-timer-ficha'; box.className='drk-timer';
-      box.innerHTML='<div class="drk-timer__t">'+RELOJ+'<span class="drk-timer__tt"></span></div>'+
-        '<div class="drk-timer__clock">'+unidad('d','D\u00edas')+'<span class="drk-timer__sep">:</span>'+unidad('h','Horas')+'<span class="drk-timer__sep">:</span>'+unidad('m','Min')+'<span class="drk-timer__sep">:</span>'+unidad('s','Seg')+'</div>'+
-        '<div class="drk-timer__end">\u00a1\u00daltima oportunidad!</div>';
-      anchor.parentNode.insertBefore(box, anchor.nextSibling);
-    }
-    var r=remaining(slug),p=parts(r),end=r<CASI;
-    box.className='drk-timer'+(end?' end':'');
-    box.querySelector('.drk-timer__tt').textContent = end ? ' Oferta por tiempo limitado' : ' Oferta por tiempo limitado \u2014 termina en';
-    if(!end){
-      box.querySelector('[data-u="d"]').textContent=z(p.d);
-      box.querySelector('[data-u="h"]').textContent=z(p.h);
-      box.querySelector('[data-u="m"]').textContent=z(p.m);
-      box.querySelector('[data-u="s"]').textContent=z(p.s);
-    }
-  }
-
-  function tick(){ tickListado(); tickFicha(); }
-  document.addEventListener('DOMContentLoaded', tick);
-  setInterval(tick, 1000);
-})();
 
 
 (function(){
