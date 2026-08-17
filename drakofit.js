@@ -1030,7 +1030,15 @@ document.addEventListener("DOMContentLoaded", function () {
       '#nf-despacho-bar .nf-txt{font-size:16px !important;}'+
       '#nf-despacho-bar .nf-ico{font-size:23px !important;}'+
       '#nf-despacho-bar .nf-cap,#nf-despacho-bar .nf-sep{font-size:18px !important;}'+
-      '@media(max-width:680px){#nf-despacho-bar .nf-txt{font-size:13.5px !important;}#nf-despacho-bar .nf-ico{font-size:19px !important;}}';
+      '@media(max-width:680px){'+
+      '#nf-despacho-bar{padding:9px 12px !important;}'+
+      '#nf-despacho-bar .nf-wrap{display:flex !important;flex-wrap:nowrap !important;align-items:center !important;justify-content:center !important;gap:8px !important;max-width:100% !important;}'+
+      '#nf-despacho-bar .nf-txt{display:inline-flex !important;align-items:center !important;gap:5px !important;font-size:11px !important;letter-spacing:.02em !important;line-height:1.1 !important;}'+
+      '#nf-despacho-bar .nf-ico{font-size:16px !important;}'+
+      '#nf-despacho-bar .nf-reloj{flex:0 0 auto !important;gap:3px !important;}'+
+      '#nf-despacho-bar .nf-cap{font-size:12px !important;min-width:22px !important;padding:3px 5px !important;}'+
+      '#nf-despacho-bar .nf-sep{font-size:12px !important;}'+
+      '}';
     var s=document.createElement('style');s.appendChild(document.createTextNode(c));(document.head||document.documentElement).appendChild(s);
   }catch(e){}
   function sync(){
@@ -1172,11 +1180,11 @@ document.addEventListener("DOMContentLoaded", function () {
     ".drk-promo__val{background:linear-gradient(180deg,#f6dd86,#d4af37);color:#141414;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:19px;letter-spacing:.14em;padding:10px 18px;}"+
     ".drk-promo.urgente .drk-promo__val{background:linear-gradient(180deg,#ff7a90,#ff3b5c);color:#fff;}"+
     /* union: voucher pegado al titulo Week off */
-    ".drk-promo{border-radius:14px 14px 0 0 !important;border-bottom:none !important;margin-bottom:0 !important;}"+
+    ".drk-promo-activa .drk-promo{border-radius:14px 14px 0 0 !important;border-bottom:none !important;margin-bottom:0 !important;}"+
     /* titulo nativo Week off: centrado, mismo marco, integrado */
-    ".js-section-products-best-seller .js-products-best-seller-title{position:relative;font-family:'Oswald','Arial Narrow',sans-serif !important;color:#fff !important;font-size:24px !important;text-transform:uppercase !important;font-weight:700 !important;letter-spacing:.04em !important;text-align:center !important;background:linear-gradient(180deg,#20060c,#0d0d0d) !important;border:1.5px solid #d4af37 !important;border-top:none !important;border-radius:0 0 14px 14px !important;padding:13px 18px !important;margin:0 0 14px !important;}"+
-    ".js-section-products-best-seller .js-products-best-seller-title::before,.js-section-products-best-seller .js-products-best-seller-title::after{content:'';display:inline-block;width:26px;height:2px;background:linear-gradient(90deg,transparent,#d4af37);vertical-align:middle;margin:0 12px 4px;}"+
-    ".js-section-products-best-seller .js-products-best-seller-title::after{background:linear-gradient(90deg,#d4af37,transparent);}";
+    ".drk-promo-activa .js-products-best-seller-title{position:relative;font-family:'Oswald','Arial Narrow',sans-serif !important;color:#fff !important;font-size:24px !important;text-transform:uppercase !important;font-weight:700 !important;letter-spacing:.04em !important;text-align:center !important;background:linear-gradient(180deg,#20060c,#0d0d0d) !important;border:1.5px solid #d4af37 !important;border-top:none !important;border-radius:0 0 14px 14px !important;padding:13px 18px !important;margin:0 0 14px !important;}"+
+    ".drk-promo-activa .js-products-best-seller-title::before,.drk-promo-activa .js-products-best-seller-title::after{content:'';display:inline-block;width:26px;height:2px;background:linear-gradient(90deg,transparent,#d4af37);vertical-align:middle;margin:0 12px 4px;}"+
+    ".drk-promo-activa .js-products-best-seller-title::after{background:linear-gradient(90deg,#d4af37,transparent);}";
   try{var st=document.createElement('style');st.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(st);}catch(e){}
 
   function z(n){return(n<10?'0':'')+n;}
@@ -1196,11 +1204,12 @@ document.addEventListener("DOMContentLoaded", function () {
       '<div><span class="drk-promo__code"><span class="drk-promo__lbl">Us\u00e1 el c\u00f3digo</span><span class="drk-promo__val">'+CODE+'</span></span></div>'+
       '</div>';
     sec.insertBefore(d, sec.firstChild);
+    sec.classList.add('drk-promo-activa');
     return true;
   }
   function tick(){
     var r=FIN-Date.now(), d=document.getElementById('drk-promo');
-    if(r<=0){ if(d&&d.parentNode) d.parentNode.removeChild(d); return; }   // terminó -> desaparece
+    if(r<=0){ if(d&&d.parentNode) d.parentNode.removeChild(d); var sx=document.querySelector(ANCLA); if(sx) sx.classList.remove('drk-promo-activa'); return; }   // terminó -> desaparece + título vuelve a normal
     if(!d){ if(!build()) return; d=document.getElementById('drk-promo'); }
     var s=Math.floor(r/1000);
     d.querySelector('[data-u="d"]').textContent=z(Math.floor(s/86400));
