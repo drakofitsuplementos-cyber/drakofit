@@ -1144,23 +1144,33 @@ document.addEventListener("DOMContentLoaded", function () {
   var URG_H = 6;   // horas antes del fin -> modo "¡Últimas horas!"
   var ANCLA = '.js-section-products-best-seller, [data-store="home-products-best-seller"]';
 
-  var CSS=".drk-promo{margin:0 0 16px;border-radius:13px;position:relative;overflow:hidden;background:linear-gradient(100deg,#4a0014,#1a0409 55%,#0d0d0d);border:1.5px solid #d4af37;box-shadow:0 6px 22px rgba(128,0,32,.28);}"+
-    ".drk-promo.urgente{border-color:#ff3b5c;background:linear-gradient(100deg,#4a0012,#230307 55%,#0d0d0d);box-shadow:0 6px 22px rgba(255,59,92,.3);}"+
-    ".drk-promo__in{position:relative;display:flex;align-items:center;gap:18px;padding:12px 20px;flex-wrap:wrap;justify-content:center;}"+
-    ".drk-promo__tag{display:inline-flex;align-items:center;gap:6px;color:#f6dd86;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;white-space:nowrap;}"+
+  var CSS=".drk-promo{position:relative;overflow:hidden;border-radius:14px;margin:0 0 16px;background:linear-gradient(135deg,#4a0014 0%,#20060c 55%,#0d0d0d 100%);border:1.5px solid #d4af37;box-shadow:0 8px 26px rgba(128,0,32,.3);}"+
+    ".drk-promo.urgente{border-color:#ff3b5c;box-shadow:0 8px 26px rgba(255,59,92,.32);background:linear-gradient(135deg,#4a0012 0%,#1e0407 55%,#0d0d0d 100%);}"+
+    ".drk-promo::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(212,175,55,.14),transparent 45%),radial-gradient(circle at 85% 80%,rgba(128,0,32,.35),transparent 55%);pointer-events:none;}"+
+    ".drk-promo__top{height:3px;background:linear-gradient(90deg,transparent,#d4af37,transparent);}"+
+    ".drk-promo.urgente .drk-promo__top{background:linear-gradient(90deg,transparent,#ff3b5c,transparent);}"+
+    ".drk-promo__in{position:relative;padding:18px 20px;text-align:center;}"+
+    ".drk-promo__tag{display:inline-flex;align-items:center;gap:7px;color:#f6dd86;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:11px;margin-bottom:10px;}"+
     ".drk-promo.urgente .drk-promo__tag{color:#ff8fa1;}"+
     ".drk-promo__dot{width:6px;height:6px;border-radius:50%;background:#f6dd86;animation:drkPromoPulse 1.2s infinite;}"+
     ".drk-promo.urgente .drk-promo__dot{background:#ff3b5c;animation-duration:.6s;}"+
-    "@keyframes drkPromoPulse{0%,100%{opacity:1}50%{opacity:.3}}"+
-    ".drk-promo__h{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;font-weight:700;font-size:20px;color:#fff;white-space:nowrap;}"+
-    ".drk-promo__h b{color:#d4af37;}.drk-promo.urgente .drk-promo__h b{color:#ff6b83;}"+
-    ".drk-promo__tmr{display:flex;gap:5px;align-items:center;}"+
-    ".drk-promo__n{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:19px;color:#141414;background:linear-gradient(180deg,#f6dd86,#d4af37);border-radius:6px;padding:5px 7px;min-width:32px;text-align:center;line-height:1;font-variant-numeric:tabular-nums;}"+
+    "@keyframes drkPromoPulse{0%,100%{opacity:1}50%{opacity:.25}}"+
+    ".drk-promo__h{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;font-weight:700;line-height:1;font-size:30px;margin:0 0 14px;background:linear-gradient(180deg,#fff 40%,#f6dd86);-webkit-background-clip:text;background-clip:text;color:transparent;}"+
+    ".drk-promo__h b{background:linear-gradient(180deg,#f6dd86,#d4af37);-webkit-background-clip:text;background-clip:text;color:transparent;}"+
+    ".drk-promo.urgente .drk-promo__h b{background:linear-gradient(180deg,#ff8fa1,#ff3b5c);-webkit-background-clip:text;background-clip:text;color:transparent;}"+
+    ".drk-promo__tmr{display:inline-flex;gap:8px;align-items:flex-start;margin-bottom:14px;}"+
+    ".drk-promo__u{display:flex;flex-direction:column;align-items:center;gap:5px;}"+
+    ".drk-promo__n{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:28px;color:#141414;background:linear-gradient(180deg,#f6dd86,#d4af37);border-radius:9px;padding:8px 11px;min-width:48px;line-height:1;box-shadow:0 3px 10px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.5);font-variant-numeric:tabular-nums;}"+
     ".drk-promo.urgente .drk-promo__n{background:linear-gradient(180deg,#ff7a90,#ff3b5c);color:#fff;}"+
-    ".drk-promo__s{color:#d4af37;font-weight:700;font-family:'Oswald','Arial Narrow',sans-serif;}.drk-promo.urgente .drk-promo__s{color:#ff3b5c;}"+
-    ".drk-promo__code{display:inline-flex;border-radius:8px;overflow:hidden;border:1.5px dashed #d4af37;white-space:nowrap;}.drk-promo.urgente .drk-promo__code{border-color:#ff3b5c;}"+
-    ".drk-promo__lbl{background:rgba(212,175,55,.12);color:#cfcfcf;font-size:9px;text-transform:uppercase;padding:7px 9px;font-family:'Oswald','Arial Narrow',sans-serif;display:flex;align-items:center;}"+
-    ".drk-promo__val{background:#d4af37;color:#141414;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:15px;letter-spacing:.1em;padding:7px 12px;}.drk-promo.urgente .drk-promo__val{background:#ff3b5c;color:#fff;}";
+    ".drk-promo__l{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:#c9a86a;}"+
+    ".drk-promo.urgente .drk-promo__l{color:#ff9fb0;}"+
+    ".drk-promo__s{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:26px;color:#d4af37;margin-top:7px;}"+
+    ".drk-promo.urgente .drk-promo__s{color:#ff3b5c;}"+
+    ".drk-promo__code{display:inline-flex;border-radius:10px;overflow:hidden;border:2px dashed #d4af37;box-shadow:0 0 0 4px rgba(212,175,55,.08);}"+
+    ".drk-promo.urgente .drk-promo__code{border-color:#ff3b5c;box-shadow:0 0 0 4px rgba(255,59,92,.1);}"+
+    ".drk-promo__lbl{background:rgba(212,175,55,.12);color:#e8dcae;font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:10px 12px;font-family:'Oswald','Arial Narrow',sans-serif;display:flex;align-items:center;}"+
+    ".drk-promo__val{background:linear-gradient(180deg,#f6dd86,#d4af37);color:#141414;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:19px;letter-spacing:.14em;padding:10px 18px;}"+
+    ".drk-promo.urgente .drk-promo__val{background:linear-gradient(180deg,#ff7a90,#ff3b5c);color:#fff;}";
   try{var st=document.createElement('style');st.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(st);}catch(e){}
 
   function z(n){return(n<10?'0':'')+n;}
@@ -1168,11 +1178,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if(document.getElementById('drk-promo')) return true;
     var sec=document.querySelector(ANCLA); if(!sec) return false;
     var d=document.createElement('div'); d.id='drk-promo'; d.className='drk-promo';
-    d.innerHTML='<div class="drk-promo__in">'+
-      '<span class="drk-promo__tag"><span class="drk-promo__dot"></span> <span class="drk-promo__tagtxt">Oferta limitada</span></span>'+
-      '<span class="drk-promo__h">Hasta <b>'+OFF+'</b></span>'+
-      '<span class="drk-promo__tmr"><span class="drk-promo__n" data-u="d">00</span><span class="drk-promo__s">:</span><span class="drk-promo__n" data-u="h">00</span><span class="drk-promo__s">:</span><span class="drk-promo__n" data-u="m">00</span><span class="drk-promo__s">:</span><span class="drk-promo__n" data-u="sc">00</span></span>'+
-      '<span class="drk-promo__code"><span class="drk-promo__lbl">C\u00f3digo</span><span class="drk-promo__val">'+CODE+'</span></span>'+
+    d.innerHTML='<div class="drk-promo__top"></div><div class="drk-promo__in">'+
+      '<span class="drk-promo__tag"><span class="drk-promo__dot"></span> <span class="drk-promo__tagtxt">Oferta por tiempo limitado</span></span>'+
+      '<div class="drk-promo__h">Hasta <b>'+OFF+'</b></div>'+
+      '<div class="drk-promo__tmr">'+
+        '<span class="drk-promo__u"><span class="drk-promo__n" data-u="d">00</span><span class="drk-promo__l">D\u00edas</span></span><span class="drk-promo__s">:</span>'+
+        '<span class="drk-promo__u"><span class="drk-promo__n" data-u="h">00</span><span class="drk-promo__l">Horas</span></span><span class="drk-promo__s">:</span>'+
+        '<span class="drk-promo__u"><span class="drk-promo__n" data-u="m">00</span><span class="drk-promo__l">Min</span></span><span class="drk-promo__s">:</span>'+
+        '<span class="drk-promo__u"><span class="drk-promo__n" data-u="sc">00</span><span class="drk-promo__l">Seg</span></span>'+
+      '</div>'+
+      '<div><span class="drk-promo__code"><span class="drk-promo__lbl">Us\u00e1 el c\u00f3digo</span><span class="drk-promo__val">'+CODE+'</span></span></div>'+
       '</div>';
     sec.insertBefore(d, sec.firstChild);
     return true;
@@ -1189,6 +1204,69 @@ document.addEventListener("DOMContentLoaded", function () {
     var urg = r <= URG_H*3600*1000;
     d.classList.toggle('urgente', urg);
     d.querySelector('.drk-promo__tagtxt').textContent = urg ? '\u00a1\u00daltimas horas!' : 'Oferta limitada';
+  }
+  document.addEventListener('DOMContentLoaded', tick);
+  setInterval(tick, 1000);
+})();
+
+/* ============================================================
+   SELLO DE OFERTA (bandera bordó) · SOLO en los 10 productos de
+   la promo · en la tarjeta del LISTADO (sobre la imagen, arriba izq).
+   Contador sincronizado al mismo FIN del voucher (domingo 23).
+   Desaparece solo al terminar. NO toca otros productos.
+   ============================================================ */
+(function(){
+  var FIN = new Date('2026-08-23T23:59:59-03:00').getTime();
+  var OFF = '-10%';
+  var PROMO = {
+    "ena-100-whey-2lbs-1dm3m":1,
+    "star-nutrition-colageno-hidrolizado-limon-210g-1vcqh":1,
+    "star-nutrition-just-plant-2lb-f5qjc":1,
+    "star-nutrition-citrato-de-magnesio-60-caps":1,
+    "gold-collagen-hidrolized-ahte-bvit-c-200grs-9we7l":1,
+    "ena-electrolitos-caja-15-sobres":1,
+    "ena-d3-k2-60-caps":1,
+    "ena-melena-de-leon-60-caps":1,
+    "star-nutrition-carnitina-liquida-500ml-fw63j":1,
+    "star-nutrition-collagen-sport-naranja-360g-bgrxs":1
+  };
+  var CSS=".drk-of{display:inline-flex;align-items:center;gap:7px;position:relative;background:linear-gradient(180deg,#a3122f,#7a0020);color:#fff;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;padding:7px 14px 7px 12px;box-shadow:0 4px 12px rgba(0,0,0,.45);border-top:1px solid rgba(246,221,134,.6);border-bottom:1px solid rgba(0,0,0,.3);z-index:6;}"+
+    ".drk-of::after{content:'';position:absolute;right:-11px;top:0;bottom:0;width:11px;background:linear-gradient(180deg,#a3122f,#7a0020);clip-path:polygon(0 0,100% 50%,0 100%);}"+
+    ".drk-of__off{color:#f6dd86;font-size:14px;letter-spacing:.03em;text-shadow:0 1px 0 rgba(0,0,0,.3);}"+
+    ".drk-of__di{width:1px;height:15px;background:rgba(246,221,134,.4);}"+
+    ".drk-of__t{display:inline-flex;align-items:center;gap:5px;font-size:13px;}"+
+    ".drk-of__t svg{width:13px;height:13px;stroke:#f6dd86;fill:none;}"+
+    ".drk-of__n{color:#fff;font-variant-numeric:tabular-nums;}"+
+    ".drk-of-wrap{position:absolute;left:0;top:12px;z-index:6;}"+
+    ".js-item-image-padding,.item-image{position:relative;}";
+  try{var s=document.createElement('style');s.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(s);}catch(e){}
+
+  var RELOJ='<svg viewBox="0 0 24 24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
+  function z(n){return(n<10?'0':'')+n;}
+  function slugFrom(u){ var m=(u||'').match(/\/productos\/([^\/?#]+)/); return m?m[1]:null; }
+  function txtTiempo(){
+    var r=FIN-Date.now(); if(r<=0) return null;
+    var s=Math.floor(r/1000), d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), sc=s%60;
+    return (d>0?d+'d ':'')+z(h)+':'+z(m)+':'+z(sc);
+  }
+  function tick(){
+    var t=txtTiempo();
+    var cards=document.querySelectorAll('.js-item-product');
+    for(var i=0;i<cards.length;i++){
+      var card=cards[i];
+      var link=card.querySelector('a[href*="/productos/"]');
+      var slug=link?slugFrom(link.getAttribute('href')):null;
+      var wrap=card.querySelector('.drk-of-wrap');
+      if(!slug || !PROMO[slug] || !t){ if(wrap) wrap.parentNode.removeChild(wrap); continue; }
+      var img=card.querySelector('.js-item-image-padding')||card.querySelector('.item-image');
+      if(!img) continue;
+      if(!wrap){
+        wrap=document.createElement('div'); wrap.className='drk-of-wrap';
+        wrap.innerHTML='<span class="drk-of"><span class="drk-of__off">'+OFF+'</span><span class="drk-of__di"></span><span class="drk-of__t">'+RELOJ+'<span class="drk-of__n"></span></span></span>';
+        img.appendChild(wrap);
+      }
+      var n=wrap.querySelector('.drk-of__n'); if(n) n.textContent=t;
+    }
   }
   document.addEventListener('DOMContentLoaded', tick);
   setInterval(tick, 1000);
