@@ -1170,7 +1170,13 @@ document.addEventListener("DOMContentLoaded", function () {
     ".drk-promo.urgente .drk-promo__code{border-color:#ff3b5c;box-shadow:0 0 0 4px rgba(255,59,92,.1);}"+
     ".drk-promo__lbl{background:rgba(212,175,55,.12);color:#e8dcae;font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:10px 12px;font-family:'Oswald','Arial Narrow',sans-serif;display:flex;align-items:center;}"+
     ".drk-promo__val{background:linear-gradient(180deg,#f6dd86,#d4af37);color:#141414;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:19px;letter-spacing:.14em;padding:10px 18px;}"+
-    ".drk-promo.urgente .drk-promo__val{background:linear-gradient(180deg,#ff7a90,#ff3b5c);color:#fff;}";
+    ".drk-promo.urgente .drk-promo__val{background:linear-gradient(180deg,#ff7a90,#ff3b5c);color:#fff;}"+
+    /* union: voucher pegado al titulo Week off */
+    ".drk-promo{border-radius:14px 14px 0 0 !important;border-bottom:none !important;margin-bottom:0 !important;}"+
+    /* titulo nativo Week off: centrado, mismo marco, integrado */
+    ".js-section-products-best-seller .js-products-best-seller-title{position:relative;font-family:'Oswald','Arial Narrow',sans-serif !important;color:#fff !important;font-size:24px !important;text-transform:uppercase !important;font-weight:700 !important;letter-spacing:.04em !important;text-align:center !important;background:linear-gradient(180deg,#20060c,#0d0d0d) !important;border:1.5px solid #d4af37 !important;border-top:none !important;border-radius:0 0 14px 14px !important;padding:13px 18px !important;margin:0 0 14px !important;}"+
+    ".js-section-products-best-seller .js-products-best-seller-title::before,.js-section-products-best-seller .js-products-best-seller-title::after{content:'';display:inline-block;width:26px;height:2px;background:linear-gradient(90deg,transparent,#d4af37);vertical-align:middle;margin:0 12px 4px;}"+
+    ".js-section-products-best-seller .js-products-best-seller-title::after{background:linear-gradient(90deg,#d4af37,transparent);}";
   try{var st=document.createElement('style');st.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(st);}catch(e){}
 
   function z(n){return(n<10?'0':'')+n;}
