@@ -1286,3 +1286,84 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener('DOMContentLoaded', tick);
   setInterval(tick, 1000);
 })();
+
+/* ============================================================
+   PROMO EN FICHA · cartel con código DRAKO360 + cronómetro
+   SOLO en los 10 productos de la promo · debajo del precio.
+   Sincronizado al mismo FIN (domingo 23). Desaparece solo.
+   ============================================================ */
+(function(){
+  var FIN = new Date('2026-08-23T23:59:59-03:00').getTime();
+  var CODE = 'DRAKO360';
+  var OFF  = '10% OFF';
+  var PROMO = {
+    "ena-100-whey-2lbs-1dm3m":1,
+    "star-nutrition-colageno-hidrolizado-limon-210g-1vcqh":1,
+    "star-nutrition-just-plant-2lb-f5qjc":1,
+    "star-nutrition-citrato-de-magnesio-60-caps":1,
+    "gold-collagen-hidrolized-ahte-bvit-c-200grs-9we7l":1,
+    "ena-electrolitos-caja-15-sobres":1,
+    "ena-d3-k2-60-caps":1,
+    "ena-melena-de-leon-60-caps":1,
+    "star-nutrition-carnitina-liquida-500ml-fw63j":1,
+    "star-nutrition-collagen-sport-naranja-360g-bgrxs":1
+  };
+  var CSS=".drk-fp{position:relative;overflow:hidden;border-radius:12px;border:1.5px solid #d4af37;background:linear-gradient(135deg,#4a0014,#20060c 60%,#0d0d0d);box-shadow:0 6px 20px rgba(128,0,32,.3);padding:14px 16px;margin:14px 0;}"+
+    ".drk-fp::before{content:'';position:absolute;top:-40%;right:-10%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.15),transparent 70%);pointer-events:none;}"+
+    ".drk-fp__top{position:relative;display:flex;align-items:center;gap:8px;margin-bottom:12px;}"+
+    ".drk-fp__tag{display:inline-flex;align-items:center;gap:6px;color:#f6dd86;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:11px;}"+
+    ".drk-fp__dot{width:6px;height:6px;border-radius:50%;background:#f6dd86;animation:drkFpPulse 1.2s infinite;}"+
+    "@keyframes drkFpPulse{0%,100%{opacity:1}50%{opacity:.3}}"+
+    ".drk-fp__off{margin-left:auto;background:linear-gradient(180deg,#f6dd86,#d4af37);color:#141414;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:15px;padding:3px 10px;border-radius:6px;text-transform:uppercase;}"+
+    ".drk-fp__clock{position:relative;display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:12px;}"+
+    ".drk-fp__cu{display:flex;flex-direction:column;align-items:center;gap:3px;}"+
+    ".drk-fp__n{font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:22px;color:#141414;background:linear-gradient(180deg,#f6dd86,#d4af37);border-radius:7px;padding:6px 9px;min-width:40px;text-align:center;line-height:1;box-shadow:0 2px 8px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.5);font-variant-numeric:tabular-nums;}"+
+    ".drk-fp__l{font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:#c9a86a;}"+
+    ".drk-fp__s{color:#d4af37;font-weight:700;font-family:'Oswald','Arial Narrow',sans-serif;font-size:18px;margin-top:5px;}"+
+    ".drk-fp__mid{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}"+
+    ".drk-fp__code{display:inline-flex;border-radius:9px;overflow:hidden;border:2px dashed #d4af37;flex:0 0 auto;box-shadow:0 0 0 4px rgba(212,175,55,.08);}"+
+    ".drk-fp__code .l{background:rgba(212,175,55,.12);color:#e8dcae;font-size:9px;text-transform:uppercase;letter-spacing:.05em;padding:9px 10px;font-family:'Oswald','Arial Narrow',sans-serif;display:flex;align-items:center;}"+
+    ".drk-fp__code .v{background:linear-gradient(180deg,#f6dd86,#d4af37);color:#141414;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;font-size:17px;letter-spacing:.12em;padding:9px 15px;}"+
+    ".drk-fp__foot{position:relative;text-align:center;color:#cbb98a;font-size:11px;margin-top:11px;line-height:1.3;}"+
+    ".drk-fp__foot b{color:#f6dd86;}";
+  try{var st=document.createElement('style');st.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(st);}catch(e){}
+
+  function z(n){return(n<10?'0':'')+n;}
+  function slugFrom(u){ var m=(u||'').match(/\/productos\/([^\/?#]+)/); return m?m[1]:null; }
+  function build(box){
+    var d=document.createElement('div'); d.id='drk-fp'; d.className='drk-fp';
+    d.innerHTML='<div class="drk-fp__top"><span class="drk-fp__tag"><span class="drk-fp__dot"></span> Oferta por tiempo limitado</span><span class="drk-fp__off">'+OFF+'</span></div>'+
+      '<div class="drk-fp__clock">'+
+        '<div class="drk-fp__cu"><span class="drk-fp__n" data-u="d">00</span><span class="drk-fp__l">D\u00edas</span></div><span class="drk-fp__s">:</span>'+
+        '<div class="drk-fp__cu"><span class="drk-fp__n" data-u="h">00</span><span class="drk-fp__l">Horas</span></div><span class="drk-fp__s">:</span>'+
+        '<div class="drk-fp__cu"><span class="drk-fp__n" data-u="m">00</span><span class="drk-fp__l">Min</span></div><span class="drk-fp__s">:</span>'+
+        '<div class="drk-fp__cu"><span class="drk-fp__n" data-u="sc">00</span><span class="drk-fp__l">Seg</span></div>'+
+      '</div>'+
+      '<div class="drk-fp__mid"><span class="drk-fp__code"><span class="l">Us\u00e1 el c\u00f3digo</span><span class="v">'+CODE+'</span></span></div>'+
+      '<div class="drk-fp__foot">Usalo en el checkout y llevate <b>'+OFF+'</b> \ud83d\udd25</div>';
+    return d;
+  }
+  function tick(){
+    if(!document.querySelector('h1.js-product-name')) return;      // solo en ficha
+    var slug=slugFrom(location.pathname);
+    var d=document.getElementById('drk-fp');
+    var r=FIN-Date.now();
+    if(!slug || !PROMO[slug] || r<=0){ if(d&&d.parentNode) d.parentNode.removeChild(d); return; }
+    if(!d){
+      /* ancla: debajo del precio / caja de transferencia */
+      var box=document.querySelector('.js-price-container') ||
+              document.querySelector('.js-product-price-container') ||
+              document.querySelector('h1.js-product-name');
+      if(!box||!box.parentNode) return;
+      d=build(box);
+      box.parentNode.insertBefore(d, box.nextSibling);
+    }
+    var s=Math.floor(r/1000);
+    d.querySelector('[data-u="d"]').textContent=z(Math.floor(s/86400));
+    d.querySelector('[data-u="h"]').textContent=z(Math.floor(s%86400/3600));
+    d.querySelector('[data-u="m"]').textContent=z(Math.floor(s%3600/60));
+    d.querySelector('[data-u="sc"]').textContent=z(s%60);
+  }
+  document.addEventListener('DOMContentLoaded', tick);
+  setInterval(tick, 1000);
+})();
