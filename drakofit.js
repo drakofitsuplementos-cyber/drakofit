@@ -1201,7 +1201,6 @@ document.addEventListener("DOMContentLoaded", function () {
         '<span class="drk-promo__u"><span class="drk-promo__n" data-u="m">00</span><span class="drk-promo__l">Min</span></span><span class="drk-promo__s">:</span>'+
         '<span class="drk-promo__u"><span class="drk-promo__n" data-u="sc">00</span><span class="drk-promo__l">Seg</span></span>'+
       '</div>'+
-      '<div><span class="drk-promo__code"><span class="drk-promo__lbl">Us\u00e1 el c\u00f3digo</span><span class="drk-promo__val">'+CODE+'</span></span></div>'+
       '</div>';
     sec.insertBefore(d, sec.firstChild);
     sec.classList.add('drk-promo-activa');
@@ -1339,8 +1338,7 @@ document.addEventListener("DOMContentLoaded", function () {
         '<div class="drk-fp__cu"><span class="drk-fp__n" data-u="m">00</span><span class="drk-fp__l">Min</span></div><span class="drk-fp__s">:</span>'+
         '<div class="drk-fp__cu"><span class="drk-fp__n" data-u="sc">00</span><span class="drk-fp__l">Seg</span></div>'+
       '</div>'+
-      '<div class="drk-fp__mid"><span class="drk-fp__code"><span class="l">Us\u00e1 el c\u00f3digo</span><span class="v">'+CODE+'</span></span></div>'+
-      '<div class="drk-fp__foot">Usalo en el checkout y llevate <b>'+OFF+'</b> \ud83d\udd25</div>';
+      '<div class="drk-fp__foot">Descuento aplicado autom\u00e1ticamente \u00b7 <b>'+OFF+'</b> \ud83d\udd25</div>';
     return d;
   }
   function tick(){
@@ -1363,6 +1361,33 @@ document.addEventListener("DOMContentLoaded", function () {
     d.querySelector('[data-u="h"]').textContent=z(Math.floor(s%86400/3600));
     d.querySelector('[data-u="m"]').textContent=z(Math.floor(s%3600/60));
     d.querySelector('[data-u="sc"]').textContent=z(s%60);
+  }
+  document.addEventListener('DOMContentLoaded', tick);
+  setInterval(tick, 1000);
+})();
+
+/* ============================================================
+   ENVÍO GRATIS CABA · cartel en la ficha, igual al nativo
+   Se agrega debajo del "Envío gratis superando los $120.000".
+   Texto informativo fijo (regla real: CABA gratis desde $70.000
+   sobre precio de lista). Solo en la ficha.
+   ============================================================ */
+(function(){
+  var CSS=".drk-envio-caba{margin-top:6px;}"+
+    ".drk-envio-caba .ec-line{display:inline-flex;align-items:center;gap:6px;}"+
+    ".drk-envio-caba .ec-moto{font-size:15px;line-height:1;}"+
+    ".drk-envio-caba .ec-ac{color:#36d36a;font-weight:600;}";
+  try{var st=document.createElement('style');st.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(st);}catch(e){}
+
+  function tick(){
+    if(!document.querySelector('h1.js-product-name')) return;   // solo ficha
+    var nat=document.querySelector('.js-free-shipping-minimum-message');
+    if(!nat) return;
+    if(document.getElementById('drk-envio-caba')) return;       // ya está
+    var d=document.createElement('div'); d.id='drk-envio-caba'; d.className='drk-envio-caba';
+    /* copia las clases del nativo para heredar el mismo estilo/tamaño */
+    d.innerHTML='<span class="ec-line"><span class="ec-moto">\ud83d\udef5</span> <span class="text-accent ec-ac">Env\u00edo gratis en CABA</span> <span class="js-shipping-minimum-label">superando los <span>$70.000,00</span></span></span>';
+    nat.appendChild(d);
   }
   document.addEventListener('DOMContentLoaded', tick);
   setInterval(tick, 1000);
