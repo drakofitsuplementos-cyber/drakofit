@@ -1234,15 +1234,16 @@ document.addEventListener("DOMContentLoaded", function () {
   var OFF = '-10%';
   var PROMO = {
     "ena-100-whey-2lbs-1dm3m":1,
+    "star-nutrition-collagen-sport-naranja-360g-bgrxs":1,
     "star-nutrition-colageno-hidrolizado-limon-210g-1vcqh":1,
-    "star-nutrition-just-plant-2lb-f5qjc":1,
     "star-nutrition-citrato-de-magnesio-60-caps":1,
-    "gold-collagen-hidrolized-ahte-bvit-c-200grs-9we7l":1,
-    "ena-electrolitos-caja-15-sobres":1,
-    "ena-d3-k2-60-caps":1,
-    "ena-melena-de-leon-60-caps":1,
-    "star-nutrition-carnitina-liquida-500ml-fw63j":1,
-    "star-nutrition-collagen-sport-naranja-360g-bgrxs":1
+    "star-nutrition-creatina-monohidratada-300g-doypack":1,
+    "star-nutrition-creatina-monohidratada-300g-pote":1,
+    "optimum-nutrition-creatina-monohidrato-300g":1,
+    "one-fit-creatina-200g-vsn6v":1,
+    "body-advance-whey-protein-2lb":1,
+    "gold-100-whey-protein-2lbs-1or33":1,
+    "star-nutrition-just-plant-2lb-f5qjc":1
   };
   var CSS=".drk-of{display:inline-flex;align-items:center;gap:7px;position:relative;background:linear-gradient(180deg,#a3122f,#7a0020);color:#fff;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;padding:7px 14px 7px 12px;box-shadow:0 4px 12px rgba(0,0,0,.45);border-top:1px solid rgba(246,221,134,.6);border-bottom:1px solid rgba(0,0,0,.3);z-index:6;}"+
     ".drk-of::after{content:'';position:absolute;right:-11px;top:0;bottom:0;width:11px;background:linear-gradient(180deg,#a3122f,#7a0020);clip-path:polygon(0 0,100% 50%,0 100%);}"+
@@ -1297,15 +1298,16 @@ document.addEventListener("DOMContentLoaded", function () {
   var OFF  = '10% OFF';
   var PROMO = {
     "ena-100-whey-2lbs-1dm3m":1,
+    "star-nutrition-collagen-sport-naranja-360g-bgrxs":1,
     "star-nutrition-colageno-hidrolizado-limon-210g-1vcqh":1,
-    "star-nutrition-just-plant-2lb-f5qjc":1,
     "star-nutrition-citrato-de-magnesio-60-caps":1,
-    "gold-collagen-hidrolized-ahte-bvit-c-200grs-9we7l":1,
-    "ena-electrolitos-caja-15-sobres":1,
-    "ena-d3-k2-60-caps":1,
-    "ena-melena-de-leon-60-caps":1,
-    "star-nutrition-carnitina-liquida-500ml-fw63j":1,
-    "star-nutrition-collagen-sport-naranja-360g-bgrxs":1
+    "star-nutrition-creatina-monohidratada-300g-doypack":1,
+    "star-nutrition-creatina-monohidratada-300g-pote":1,
+    "optimum-nutrition-creatina-monohidrato-300g":1,
+    "one-fit-creatina-200g-vsn6v":1,
+    "body-advance-whey-protein-2lb":1,
+    "gold-100-whey-protein-2lbs-1or33":1,
+    "star-nutrition-just-plant-2lb-f5qjc":1
   };
   var CSS=".drk-fp{position:relative;overflow:hidden;border-radius:12px;border:1.5px solid #d4af37;background:linear-gradient(135deg,#4a0014,#20060c 60%,#0d0d0d);box-shadow:0 6px 20px rgba(128,0,32,.3);padding:14px 16px;margin:14px 0;}"+
     ".drk-fp::before{content:'';position:absolute;top:-40%;right:-10%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.15),transparent 70%);pointer-events:none;}"+
