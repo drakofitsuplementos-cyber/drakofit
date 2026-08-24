@@ -1146,7 +1146,7 @@ document.addEventListener("DOMContentLoaded", function () {
    Editar acá: FIN (fecha), CODE (código), OFF (texto descuento).
    ============================================================ */
 (function(){
-  var FIN  = new Date('2026-08-23T23:59:59-03:00').getTime();  // fin real (ART)
+  var FIN  = new Date('2026-08-30T23:59:59-03:00').getTime();  // fin real (ART)
   var CODE = 'DRAKO360';
   var OFF  = '10% OFF';
   var URG_H = 6;   // horas antes del fin -> modo "¡Últimas horas!"
@@ -1230,7 +1230,7 @@ document.addEventListener("DOMContentLoaded", function () {
    Desaparece solo al terminar. NO toca otros productos.
    ============================================================ */
 (function(){
-  var FIN = new Date('2026-08-23T23:59:59-03:00').getTime();
+  var FIN = new Date('2026-08-30T23:59:59-03:00').getTime();
   var OFF = '-10%';
   var PROMO = {
     "ena-100-whey-2lbs-1dm3m":1,
@@ -1293,7 +1293,7 @@ document.addEventListener("DOMContentLoaded", function () {
    Sincronizado al mismo FIN (domingo 23). Desaparece solo.
    ============================================================ */
 (function(){
-  var FIN = new Date('2026-08-23T23:59:59-03:00').getTime();
+  var FIN = new Date('2026-08-30T23:59:59-03:00').getTime();
   var CODE = 'DRAKO360';
   var OFF  = '10% OFF';
   var PROMO = {
