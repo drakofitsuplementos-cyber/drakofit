@@ -1389,3 +1389,64 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener('DOMContentLoaded', tick);
   setInterval(tick, 1000);
 })();
+
+/* ============================================================
+   VOUCHER URGENCIA SUTIL · debajo del carrusel "Ofertas de la
+   semana" (section.js-section-products-featured). Una sola línea
+   fina con contador. Sincronizado al FIN de la promo (domingo 30).
+   Desaparece solo al llegar a 0. Ancla estable (no por posición).
+   ============================================================ */
+(function(){
+  var FIN = new Date('2026-08-30T23:59:59-03:00').getTime();
+  var ANCLA = 'section.js-section-products-featured, .section-featured-home, [data-store="home-products-featured"]';
+
+  var CSS=".drk-vu{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;"+
+    "max-width:560px;margin:6px auto 22px;padding:12px 20px;border-radius:12px;"+
+    "background:linear-gradient(135deg,rgba(128,0,32,.32),rgba(20,20,20,.6));"+
+    "border:1px solid rgba(212,175,55,.4);font-family:'Oswald','Arial Narrow',sans-serif;}"+
+    ".drk-vu__l{display:flex;align-items:center;gap:9px;}"+
+    ".drk-vu__dot{width:7px;height:7px;border-radius:50%;background:#f6dd86;"+
+    "box-shadow:0 0 8px rgba(246,221,134,.8);animation:drkVuPulse 1.3s infinite;}"+
+    "@keyframes drkVuPulse{0%,100%{opacity:1}50%{opacity:.3}}"+
+    ".drk-vu__txt{text-transform:uppercase;letter-spacing:.04em;font-size:13px;color:#e8dcae;font-weight:600;}"+
+    ".drk-vu__txt b{color:#f6dd86;}"+
+    ".drk-vu__tmr{display:inline-flex;gap:5px;align-items:flex-start;}"+
+    ".drk-vu__u{display:flex;flex-direction:column;align-items:center;}"+
+    ".drk-vu__n{font-weight:700;font-size:17px;color:#141414;background:linear-gradient(180deg,#f6dd86,#d4af37);"+
+    "border-radius:6px;padding:4px 7px;min-width:30px;text-align:center;line-height:1;font-variant-numeric:tabular-nums;}"+
+    ".drk-vu__s{color:#d4af37;font-weight:700;font-size:15px;margin-top:3px;}"+
+    ".drk-vu__cap{font-size:8px;color:#c9a86a;text-transform:uppercase;letter-spacing:.06em;margin-top:2px;}"+
+    "@media(max-width:680px){.drk-vu{gap:10px;padding:10px 14px;}.drk-vu__txt{font-size:11px;}.drk-vu__n{font-size:15px;min-width:26px;padding:3px 5px;}}";
+  try{var st=document.createElement('style');st.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(st);}catch(e){}
+
+  function z(n){return(n<10?'0':'')+n;}
+  function esHome(){ return location.pathname==='/' || location.pathname===''; }
+  function build(){
+    if(document.getElementById('drk-vu-semana')) return true;
+    var sec=document.querySelector(ANCLA); if(!sec) return false;
+    var d=document.createElement('div'); d.id='drk-vu-semana'; d.className='drk-vu';
+    d.innerHTML='<div class="drk-vu__l"><span class="drk-vu__dot"></span>'+
+      '<span class="drk-vu__txt">Las ofertas terminan en</span></div>'+
+      '<div class="drk-vu__tmr">'+
+        '<span class="drk-vu__u"><span class="drk-vu__n" data-vu="d">00</span><span class="drk-vu__cap">d\u00edas</span></span><span class="drk-vu__s">:</span>'+
+        '<span class="drk-vu__u"><span class="drk-vu__n" data-vu="h">00</span><span class="drk-vu__cap">hs</span></span><span class="drk-vu__s">:</span>'+
+        '<span class="drk-vu__u"><span class="drk-vu__n" data-vu="m">00</span><span class="drk-vu__cap">min</span></span><span class="drk-vu__s">:</span>'+
+        '<span class="drk-vu__u"><span class="drk-vu__n" data-vu="s">00</span><span class="drk-vu__cap">seg</span></span>'+
+      '</div>';
+    sec.parentNode.insertBefore(d, sec.nextSibling);   // JUSTO DESPUES del carrusel
+    return true;
+  }
+  function tick(){
+    if(!esHome()) return;
+    var r=FIN-Date.now(), d=document.getElementById('drk-vu-semana');
+    if(r<=0){ if(d&&d.parentNode) d.parentNode.removeChild(d); return; }   // termino -> desaparece
+    if(!d){ if(!build()) return; d=document.getElementById('drk-vu-semana'); }
+    var s=Math.floor(r/1000);
+    d.querySelector('[data-vu="d"]').textContent=z(Math.floor(s/86400));
+    d.querySelector('[data-vu="h"]').textContent=z(Math.floor(s%86400/3600));
+    d.querySelector('[data-vu="m"]').textContent=z(Math.floor(s%3600/60));
+    d.querySelector('[data-vu="s"]').textContent=z(s%60);
+  }
+  document.addEventListener('DOMContentLoaded', tick);
+  setInterval(tick, 1000);
+})();
