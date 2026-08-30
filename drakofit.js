@@ -1433,7 +1433,7 @@ document.addEventListener("DOMContentLoaded", function () {
         '<span class="drk-vu__u"><span class="drk-vu__n" data-vu="m">00</span><span class="drk-vu__cap">min</span></span><span class="drk-vu__s">:</span>'+
         '<span class="drk-vu__u"><span class="drk-vu__n" data-vu="s">00</span><span class="drk-vu__cap">seg</span></span>'+
       '</div>';
-    sec.parentNode.insertBefore(d, sec.nextSibling);   // JUSTO DESPUES del carrusel
+    sec.insertBefore(d, sec.firstChild);   // ARRIBA del carrusel (primer hijo de la seccion)
     return true;
   }
   function tick(){
