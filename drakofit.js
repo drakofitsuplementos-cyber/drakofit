@@ -1020,13 +1020,14 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 
 /* ============================================================
-   DESPACHO BAR · más grande + FIXED arriba (robusto ante overflow)
-   Usa position:fixed y empuja el body/header con padding-top para
-   que no tape el contenido. No depende del overflow de ningún padre.
+   DESPACHO BAR · NORMAL (no fija) — scrollea con la página.
+   Va arriba de todo; al bajar se va con el contenido y no tapa.
+   El header sigue fijo por su cuenta (no lo tocamos).
+   Ya NO empuja el body ni mueve el header (eso cortaba el logo).
    ============================================================ */
 (function(){
   try{
-    var c='#nf-despacho-bar{padding:14px 16px !important;position:fixed !important;top:0 !important;left:0 !important;right:0 !important;width:100% !important;z-index:100000 !important;margin:0 !important;}'+
+    var c='#nf-despacho-bar{padding:12px 16px !important;position:static !important;top:auto !important;left:auto !important;right:auto !important;width:100% !important;z-index:auto !important;margin:0 !important;}'+
       '#nf-despacho-bar .nf-txt{font-size:16px !important;}'+
       '#nf-despacho-bar .nf-ico{font-size:23px !important;}'+
       '#nf-despacho-bar .nf-cap,#nf-despacho-bar .nf-sep{font-size:18px !important;}'+
@@ -1041,25 +1042,19 @@ document.addEventListener("DOMContentLoaded", function () {
       '}';
     var s=document.createElement('style');s.appendChild(document.createTextNode(c));(document.head||document.documentElement).appendChild(s);
   }catch(e){}
-  function sync(){
-    var bar=document.getElementById('nf-despacho-bar');
-    var head=document.querySelector('header.js-head-main, header.head-main, header');
-    if(!bar) return;
-    if(getComputedStyle(bar).display==='none'){
+  /* Limpieza defensiva: si alguna versión anterior dejó el empuje
+     puesto (padding-top en body / top en header), lo sacamos. */
+  function limpiar(){
+    try{
       document.body.style.removeProperty('padding-top');
+      var head=document.querySelector('header.js-head-main, header.head-main, header');
       if(head) head.style.removeProperty('top');
-      return;
-    }
-    var h=bar.offsetHeight||0;
-    /* empuja todo hacia abajo la altura de la barra fija */
-    document.body.style.setProperty('padding-top', h+'px', 'important');
-    /* el header sticky del tema queda justo debajo de la barra */
-    if(head) head.style.setProperty('top', h+'px', 'important');
+    }catch(e){}
   }
-  window.addEventListener('resize', sync);
-  window.addEventListener('load', sync);
-  document.addEventListener('DOMContentLoaded', sync);
-  setInterval(sync, 800);
+  window.addEventListener('resize', limpiar);
+  window.addEventListener('load', limpiar);
+  document.addEventListener('DOMContentLoaded', limpiar);
+  limpiar();
 })();
 
 /* ============================================================
