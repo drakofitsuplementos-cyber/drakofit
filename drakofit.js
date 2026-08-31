@@ -1450,20 +1450,22 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 
 /* ============================================================
-   ENVÍO GRATIS CABA · cartel en el LISTADO (estilo mínimo).
-   Solo en productos con precio de tarjeta >= $70.000 (regla real:
-   envío gratis CABA desde $70.000 sobre precio de lista).
-   Lee data-product-price (centavos) de cada tarjeta. Discreto,
-   sin caja, para no confundirse con la caja verde de transferencia.
+   ENVÍO GRATIS CABA · cinta DENTRO de la imagen del producto
+   (abajo, full width, estilo A). Solo en productos con precio
+   de tarjeta >= $70.000 (regla real: envío gratis CABA desde
+   $70.000 sobre precio de lista). Lee data-product-price (centavos).
+   No estira la ficha. Aparece/desaparece solo según el precio.
    ============================================================ */
 (function(){
   var MIN = 70000;   // mínimo precio tarjeta para envío gratis CABA
 
-  var CSS=".drk-envcaba{display:flex;align-items:center;gap:6px;margin:8px auto 4px;padding:4px 0;justify-content:center;}"+
-    ".drk-envcaba .moto{font-size:14px;line-height:1;}"+
-    ".drk-envcaba .t{color:#d4af37;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;font-family:'Oswald','Arial Narrow',sans-serif;}"+
-    ".drk-envcaba .t b{color:#f6dd86;}"+
-    ".drk-envcaba .chk{color:#36d36a;font-weight:700;}";
+  var CSS=".drk-envcaba{position:absolute;left:0;right:0;bottom:0;z-index:5;"+
+    "background:linear-gradient(0deg,rgba(20,20,20,.94),rgba(20,20,20,.72));"+
+    "display:flex;align-items:center;justify-content:center;gap:6px;padding:6px;"+
+    "border-top:1px solid rgba(212,175,55,.4);}"+
+    ".drk-envcaba .moto{font-size:13px;line-height:1;}"+
+    ".drk-envcaba .t{color:#f6dd86;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;font-family:'Oswald','Arial Narrow',sans-serif;}"+
+    "@media(max-width:680px){.drk-envcaba{padding:5px;}.drk-envcaba .t{font-size:10px;}}";
   try{var st=document.createElement('style');st.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(st);}catch(e){}
 
   function precioTarjeta(card){
@@ -1483,15 +1485,13 @@ document.addEventListener("DOMContentLoaded", function () {
       var precio=precioTarjeta(card);
       if(precio!==null && precio>=MIN){
         if(ya) continue;   // ya lo tiene
-        /* ancla: debajo de las cuotas / precio / caja de transferencia, dentro del marco */
-        var ancla=card.querySelector('.js-max-installments-container')
-               || card.querySelector('.js-payment-discount-price-product-container')
-               || card.querySelector('.item-price-container')
-               || card.querySelector('.js-item-description');
-        if(!ancla) continue;
+        /* dentro de la imagen (misma zona que el sello de oferta) */
+        var img=card.querySelector('.js-item-image-padding')||card.querySelector('.item-image');
+        if(!img) continue;
+        if(getComputedStyle(img).position==='static'){ img.style.position='relative'; }
         var d=document.createElement('div'); d.className='drk-envcaba';
-        d.innerHTML='<span class="moto">\ud83d\udef5</span><span class="t"><span class="chk">\u2713</span> Env\u00edo gratis a <b>CABA</b></span>';
-        if(ancla.parentNode){ ancla.parentNode.insertBefore(d, ancla.nextSibling); }
+        d.innerHTML='<span class="moto">\ud83d\udef5</span><span class="t">Env\u00edo gratis CABA</span>';
+        img.appendChild(d);
       } else {
         if(ya) ya.parentNode.removeChild(ya);   // si bajó de precio y ya no califica, se saca solo
       }
