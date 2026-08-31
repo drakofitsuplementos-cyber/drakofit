@@ -1228,17 +1228,16 @@ document.addEventListener("DOMContentLoaded", function () {
   var FIN = new Date('2026-08-30T23:59:59-03:00').getTime();
   var OFF = '-10%';
   var PROMO = {
+    "ena-whey-protein-truemade-2lb":1,
+    "star-nutrition-platinum-whey-protein-1kg-doypack":1,
     "ena-100-whey-2lbs-1dm3m":1,
-    "star-nutrition-collagen-sport-naranja-360g-bgrxs":1,
-    "star-nutrition-colageno-hidrolizado-limon-210g-1vcqh":1,
-    "star-nutrition-citrato-de-magnesio-60-caps":1,
     "star-nutrition-creatina-monohidratada-300g-doypack":1,
     "star-nutrition-creatina-monohidratada-300g-pote":1,
-    "optimum-nutrition-creatina-monohidrato-300g":1,
-    "one-fit-creatina-200g-vsn6v":1,
+    "ena-creatina-doypack-300g":1,
     "body-advance-whey-protein-2lb":1,
     "gold-100-whey-protein-2lbs-1or33":1,
-    "star-nutrition-just-plant-2lb-f5qjc":1
+    "star-nutrition-creatina-1kg":1,
+    "star-nutrition-prework-v8":1
   };
   var CSS=".drk-of{display:inline-flex;align-items:center;gap:7px;position:relative;background:linear-gradient(180deg,#a3122f,#7a0020);color:#fff;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;padding:7px 14px 7px 12px;box-shadow:0 4px 12px rgba(0,0,0,.45);border-top:1px solid rgba(246,221,134,.6);border-bottom:1px solid rgba(0,0,0,.3);z-index:6;}"+
     ".drk-of::after{content:'';position:absolute;right:-11px;top:0;bottom:0;width:11px;background:linear-gradient(180deg,#a3122f,#7a0020);clip-path:polygon(0 0,100% 50%,0 100%);}"+
@@ -1292,17 +1291,16 @@ document.addEventListener("DOMContentLoaded", function () {
   var CODE = 'DRAKO360';
   var OFF  = '10% OFF';
   var PROMO = {
+    "ena-whey-protein-truemade-2lb":1,
+    "star-nutrition-platinum-whey-protein-1kg-doypack":1,
     "ena-100-whey-2lbs-1dm3m":1,
-    "star-nutrition-collagen-sport-naranja-360g-bgrxs":1,
-    "star-nutrition-colageno-hidrolizado-limon-210g-1vcqh":1,
-    "star-nutrition-citrato-de-magnesio-60-caps":1,
     "star-nutrition-creatina-monohidratada-300g-doypack":1,
     "star-nutrition-creatina-monohidratada-300g-pote":1,
-    "optimum-nutrition-creatina-monohidrato-300g":1,
-    "one-fit-creatina-200g-vsn6v":1,
+    "ena-creatina-doypack-300g":1,
     "body-advance-whey-protein-2lb":1,
     "gold-100-whey-protein-2lbs-1or33":1,
-    "star-nutrition-just-plant-2lb-f5qjc":1
+    "star-nutrition-creatina-1kg":1,
+    "star-nutrition-prework-v8":1
   };
   var CSS=".drk-fp{position:relative;overflow:hidden;border-radius:12px;border:1.5px solid #d4af37;background:linear-gradient(135deg,#4a0014,#20060c 60%,#0d0d0d);box-shadow:0 6px 20px rgba(128,0,32,.3);padding:14px 16px;margin:14px 0;}"+
     ".drk-fp::before{content:'';position:absolute;top:-40%;right:-10%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.15),transparent 70%);pointer-events:none;}"+
@@ -1446,6 +1444,58 @@ document.addEventListener("DOMContentLoaded", function () {
     d.querySelector('[data-vu="h"]').textContent=z(Math.floor(s%86400/3600));
     d.querySelector('[data-vu="m"]').textContent=z(Math.floor(s%3600/60));
     d.querySelector('[data-vu="s"]').textContent=z(s%60);
+  }
+  document.addEventListener('DOMContentLoaded', tick);
+  setInterval(tick, 1000);
+})();
+
+/* ============================================================
+   ENVÍO GRATIS CABA · cartel en el LISTADO (estilo mínimo).
+   Solo en productos con precio de tarjeta >= $70.000 (regla real:
+   envío gratis CABA desde $70.000 sobre precio de lista).
+   Lee data-product-price (centavos) de cada tarjeta. Discreto,
+   sin caja, para no confundirse con la caja verde de transferencia.
+   ============================================================ */
+(function(){
+  var MIN = 70000;   // mínimo precio tarjeta para envío gratis CABA
+
+  var CSS=".drk-envcaba{display:flex;align-items:center;gap:6px;margin:8px auto 4px;padding:4px 0;justify-content:center;}"+
+    ".drk-envcaba .moto{font-size:14px;line-height:1;}"+
+    ".drk-envcaba .t{color:#d4af37;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.02em;font-family:'Oswald','Arial Narrow',sans-serif;}"+
+    ".drk-envcaba .t b{color:#f6dd86;}"+
+    ".drk-envcaba .chk{color:#36d36a;font-weight:700;}";
+  try{var st=document.createElement('style');st.appendChild(document.createTextNode(CSS));(document.head||document.documentElement).appendChild(st);}catch(e){}
+
+  function precioTarjeta(card){
+    var el=card.querySelector('.js-price-display, [data-product-price]');
+    if(!el) return null;
+    var raw=el.getAttribute('data-product-price');
+    if(raw && !isNaN(parseInt(raw,10))) return parseInt(raw,10)/100;
+    var t=(el.textContent||'').replace(/[^\d,]/g,'').replace(/\./g,'').replace(',','.');
+    var n=parseFloat(t); return isNaN(n)?null:n;
+  }
+
+  function tick(){
+    var cards=document.querySelectorAll('.js-item-product');
+    for(var i=0;i<cards.length;i++){
+      var card=cards[i];
+      var ya=card.querySelector('.drk-envcaba');
+      var precio=precioTarjeta(card);
+      if(precio!==null && precio>=MIN){
+        if(ya) continue;   // ya lo tiene
+        /* ancla: debajo de las cuotas / precio / caja de transferencia, dentro del marco */
+        var ancla=card.querySelector('.js-max-installments-container')
+               || card.querySelector('.js-payment-discount-price-product-container')
+               || card.querySelector('.item-price-container')
+               || card.querySelector('.js-item-description');
+        if(!ancla) continue;
+        var d=document.createElement('div'); d.className='drk-envcaba';
+        d.innerHTML='<span class="moto">\ud83d\udef5</span><span class="t"><span class="chk">\u2713</span> Env\u00edo gratis a <b>CABA</b></span>';
+        if(ancla.parentNode){ ancla.parentNode.insertBefore(d, ancla.nextSibling); }
+      } else {
+        if(ya) ya.parentNode.removeChild(ya);   // si bajó de precio y ya no califica, se saca solo
+      }
+    }
   }
   document.addEventListener('DOMContentLoaded', tick);
   setInterval(tick, 1000);
