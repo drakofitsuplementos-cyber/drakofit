@@ -1141,7 +1141,7 @@ document.addEventListener("DOMContentLoaded", function () {
    Editar acá: FIN (fecha), CODE (código), OFF (texto descuento).
    ============================================================ */
 (function(){
-  var FIN  = new Date('2026-08-30T23:59:59-03:00').getTime();  // fin real (ART)
+  var FIN  = new Date('2026-09-06T23:59:59-03:00').getTime();  // fin real (ART)
   var CODE = 'DRAKO360';
   var OFF  = '10% OFF';
   var URG_H = 6;   // horas antes del fin -> modo "¡Últimas horas!"
@@ -1225,7 +1225,7 @@ document.addEventListener("DOMContentLoaded", function () {
    Desaparece solo al terminar. NO toca otros productos.
    ============================================================ */
 (function(){
-  var FIN = new Date('2026-08-30T23:59:59-03:00').getTime();
+  var FIN = new Date('2026-09-06T23:59:59-03:00').getTime();
   var OFF = '-10%';
   var PROMO = {
     "ena-whey-protein-truemade-2lb":1,
@@ -1287,7 +1287,7 @@ document.addEventListener("DOMContentLoaded", function () {
    Sincronizado al mismo FIN (domingo 23). Desaparece solo.
    ============================================================ */
 (function(){
-  var FIN = new Date('2026-08-30T23:59:59-03:00').getTime();
+  var FIN = new Date('2026-09-06T23:59:59-03:00').getTime();
   var CODE = 'DRAKO360';
   var OFF  = '10% OFF';
   var PROMO = {
@@ -1395,7 +1395,7 @@ document.addEventListener("DOMContentLoaded", function () {
    Desaparece solo al llegar a 0. Ancla estable (no por posición).
    ============================================================ */
 (function(){
-  var FIN = new Date('2026-08-30T23:59:59-03:00').getTime();
+  var FIN = new Date('2026-09-06T23:59:59-03:00').getTime();
   var ANCLA = 'section.js-section-products-featured, .section-featured-home, [data-store="home-products-featured"]';
 
   var CSS=".drk-vu{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;"+
