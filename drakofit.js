@@ -1141,7 +1141,7 @@ document.addEventListener("DOMContentLoaded", function () {
    Editar acá: FIN (fecha), CODE (código), OFF (texto descuento).
    ============================================================ */
 (function(){
-  var FIN  = new Date('2026-09-06T23:59:59-03:00').getTime();  // fin real (ART)
+  var FIN  = new Date('2026-09-13T23:59:59-03:00').getTime();  // fin real (ART)
   var CODE = 'DRAKO360';
   var OFF  = '10% OFF';
   var URG_H = 6;   // horas antes del fin -> modo "¡Últimas horas!"
@@ -1225,19 +1225,20 @@ document.addEventListener("DOMContentLoaded", function () {
    Desaparece solo al terminar. NO toca otros productos.
    ============================================================ */
 (function(){
-  var FIN = new Date('2026-09-06T23:59:59-03:00').getTime();
+  var FIN = new Date('2026-09-13T23:59:59-03:00').getTime();
   var OFF = '-10%';
   var PROMO = {
     "ena-whey-protein-truemade-2lb":1,
     "star-nutrition-platinum-whey-protein-1kg-doypack":1,
     "ena-100-whey-2lbs-1dm3m":1,
-    "star-nutrition-creatina-monohidratada-300g-doypack":1,
     "star-nutrition-creatina-monohidratada-300g-pote":1,
-    "ena-creatina-doypack-300g":1,
     "body-advance-whey-protein-2lb":1,
-    "gold-100-whey-protein-2lbs-1or33":1,
     "star-nutrition-creatina-1kg":1,
-    "star-nutrition-prework-v8":1
+    "one-fit-creatina-500g":1,
+    "star-nutrition-omega-3-fish-oil-60-caps":1,
+    "one-fit-creatina-200g-vsn6v":1,
+    "star-nutrition-magnesio-500grs":1,
+    "star-nutrition-proteina-creatina-doypack-1l381":1
   };
   var CSS=".drk-of{display:inline-flex;align-items:center;gap:7px;position:relative;background:linear-gradient(180deg,#a3122f,#7a0020);color:#fff;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:700;padding:7px 14px 7px 12px;box-shadow:0 4px 12px rgba(0,0,0,.45);border-top:1px solid rgba(246,221,134,.6);border-bottom:1px solid rgba(0,0,0,.3);z-index:6;}"+
     ".drk-of::after{content:'';position:absolute;right:-11px;top:0;bottom:0;width:11px;background:linear-gradient(180deg,#a3122f,#7a0020);clip-path:polygon(0 0,100% 50%,0 100%);}"+
@@ -1287,20 +1288,21 @@ document.addEventListener("DOMContentLoaded", function () {
    Sincronizado al mismo FIN (domingo 23). Desaparece solo.
    ============================================================ */
 (function(){
-  var FIN = new Date('2026-09-06T23:59:59-03:00').getTime();
+  var FIN = new Date('2026-09-13T23:59:59-03:00').getTime();
   var CODE = 'DRAKO360';
   var OFF  = '10% OFF';
   var PROMO = {
     "ena-whey-protein-truemade-2lb":1,
     "star-nutrition-platinum-whey-protein-1kg-doypack":1,
     "ena-100-whey-2lbs-1dm3m":1,
-    "star-nutrition-creatina-monohidratada-300g-doypack":1,
     "star-nutrition-creatina-monohidratada-300g-pote":1,
-    "ena-creatina-doypack-300g":1,
     "body-advance-whey-protein-2lb":1,
-    "gold-100-whey-protein-2lbs-1or33":1,
     "star-nutrition-creatina-1kg":1,
-    "star-nutrition-prework-v8":1
+    "one-fit-creatina-500g":1,
+    "star-nutrition-omega-3-fish-oil-60-caps":1,
+    "one-fit-creatina-200g-vsn6v":1,
+    "star-nutrition-magnesio-500grs":1,
+    "star-nutrition-proteina-creatina-doypack-1l381":1
   };
   var CSS=".drk-fp{position:relative;overflow:hidden;border-radius:12px;border:1.5px solid #d4af37;background:linear-gradient(135deg,#4a0014,#20060c 60%,#0d0d0d);box-shadow:0 6px 20px rgba(128,0,32,.3);padding:14px 16px;margin:14px 0;}"+
     ".drk-fp::before{content:'';position:absolute;top:-40%;right:-10%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.15),transparent 70%);pointer-events:none;}"+
@@ -1395,7 +1397,7 @@ document.addEventListener("DOMContentLoaded", function () {
    Desaparece solo al llegar a 0. Ancla estable (no por posición).
    ============================================================ */
 (function(){
-  var FIN = new Date('2026-09-06T23:59:59-03:00').getTime();
+  var FIN = new Date('2026-09-13T23:59:59-03:00').getTime();
   var ANCLA = 'section.js-section-products-featured, .section-featured-home, [data-store="home-products-featured"]';
 
   var CSS=".drk-vu{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;"+
