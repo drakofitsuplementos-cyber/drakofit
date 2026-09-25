@@ -1228,6 +1228,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var FIN = new Date('2026-09-27T23:59:59-03:00').getTime();
   var OFF = '-10%';
   var PROMO = {
+    "ena-ultra-mass-3kg-big-size":1,
+    "ena-ultra-mass-1-5kg":1,
+    "star-nutrition-mutant-mass-1-5kg":1,
+    "star-nutrition-mutant-mass-5-kg":1,
+    "gold-muscle-mass-gainer-5lbs-oi47r":1,
     "ena-whey-protein-truemade-2lb":1,
     "star-nutrition-platinum-whey-protein-1kg-doypack":1,
     "ena-100-whey-2lbs-1dm3m":1,
@@ -1294,6 +1299,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var CODE = 'DRAKO360';
   var OFF  = '10% OFF';
   var PROMO = {
+    "ena-ultra-mass-3kg-big-size":1,
+    "ena-ultra-mass-1-5kg":1,
+    "star-nutrition-mutant-mass-1-5kg":1,
+    "star-nutrition-mutant-mass-5-kg":1,
+    "gold-muscle-mass-gainer-5lbs-oi47r":1,
     "ena-whey-protein-truemade-2lb":1,
     "star-nutrition-platinum-whey-protein-1kg-doypack":1,
     "ena-100-whey-2lbs-1dm3m":1,
